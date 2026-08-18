@@ -44,6 +44,7 @@ import net.osmand.plus.plugins.custom.CustomOsmandPlugin;
 import net.osmand.plus.plugins.custom.CustomRegion;
 import net.osmand.plus.plugins.development.OsmandDevelopmentPlugin;
 import net.osmand.plus.plugins.externalsensors.ExternalSensorsPlugin;
+import net.osmand.plus.plugins.hideandseek.HideAndSeekPlugin;
 import net.osmand.plus.plugins.mapillary.MapillaryPlugin;
 import net.osmand.plus.plugins.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.plugins.odb.VehicleMetricsPlugin;
@@ -124,6 +125,7 @@ public class PluginsHelper {
 		allPlugins.add(new AstronomyPlugin(app));
 		allPlugins.add(new AccessibilityPlugin(app));
 		allPlugins.add(new OsmandDevelopmentPlugin(app));
+		allPlugins.add(new HideAndSeekPlugin(app));
 
 		loadCustomPlugins(app);
 		registerAppInitializingDependedProperties(app);

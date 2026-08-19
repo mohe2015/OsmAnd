@@ -91,7 +91,7 @@ class AstronomyPlugin(app: OsmandApplication) : OsmandPlugin(app) {
 			helper.addItem(
 				ContextMenuItem(OsmAndCustomizationConstants.DRAWER_STAR_MAP_ID)
 					.setTitleId(R.string.star_map, mapActivity)
-					.setIcon(R.drawable.ic_action_umbrella)
+					.setIcon(R.drawable.ic_action_telescope)
 					.setOrder(18)
 					.setListener { _: OnDataChangeUiAdapter?, _: View?, _: ContextMenuItem?, _: Boolean ->
 						app.logEvent("skymapOpen")

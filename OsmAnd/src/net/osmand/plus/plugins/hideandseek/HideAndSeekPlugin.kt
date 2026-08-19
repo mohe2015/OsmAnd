@@ -62,6 +62,7 @@ class HideAndSeekPlugin(app: OsmandApplication) : OsmandPlugin(app) {
     }
 }
 
+// quick actions can be configured by the user in "Configure Screen"
 class HideAndSeekRadarAction : SelectMapLocationAction {
     constructor() : super(TYPE)
 
@@ -95,7 +96,7 @@ class HideAndSeekRadarAction : SelectMapLocationAction {
         val TYPE: QuickActionType = QuickActionType(
             QuickActionIds.MARKER_ACTION_ID,
             "hideandseek.radar", HideAndSeekRadarAction::class.java
-        ).nameRes(R.string.map_marker).iconRes(R.drawable.ic_action_flag).nonEditable().category(QuickActionType.MY_PLACES).nameActionRes(R.string.shared_string_add)
+        ).nameRes(R.string.hideandseek_radar).iconRes(R.drawable.ic_action_flag).nonEditable().category(QuickActionType.MY_PLACES).nameActionRes(R.string.shared_string_add)
     }
 }
 

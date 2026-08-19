@@ -180,7 +180,7 @@ dependencies {
 	implementation 'commons-logging:commons-logging-api:1.1'
 	implementation 'androidx.recyclerview:recyclerview:1.1.0'
 	implementation 'com.vividsolutions:jts-core:1.14.0'
-	implementation("com.github.HITGIF:TextFieldBoxes:1.4.5") {
+	implementation("com.github.mohe2015:TextFieldBoxes:1.4.5") {
 		exclude group: 'com.android.support'
 	}
 

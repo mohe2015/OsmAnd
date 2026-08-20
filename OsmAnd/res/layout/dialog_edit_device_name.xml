@@ -97,7 +97,8 @@
         android:layout_marginRight="@dimen/content_padding"
         android:layout_marginBottom="@dimen/content_padding_half">
 
-		<net.osmand.plus.widgets.OsmandTextFieldBoxes
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:id="@+id/property_value"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -107,26 +108,18 @@
 			app:primaryColor="@color/active_color_primary_dark"
 			app:secondaryColor="?android:textColorSecondary"
 			app:hasClearButton="true"
-			android:layout_gravity="start"
-			>
+			android:layout_gravity="start">
 
-			<com.google.android.material.textfield.TextInputLayout
-				style="@style/Widget.Material3.TextInputLayout.FilledBox"
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/description"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
-
-				<com.google.android.material.textfield.TextInputEditText
-					android:id="@+id/description"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:inputType="numberDecimal"
-					android:scrollHorizontally="false"
-					android:maxLines="4"
-					android:gravity="start|center_vertical"
-					app:suffixTextColor="?android:textColorSecondary" />
-			</com.google.android.material.textfield.TextInputLayout>
-
-		</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:scrollHorizontally="false"
+				android:maxLines="4"
+				android:gravity="start|center_vertical"
+				app:suffixTextColor="?android:textColorSecondary" />
+		</com.google.android.material.textfield.TextInputLayout>
 
     </ScrollView>
 

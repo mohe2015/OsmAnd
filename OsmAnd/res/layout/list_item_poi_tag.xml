@@ -13,7 +13,8 @@
 		android:orientation="horizontal"
 		android:baselineAligned="false">
 
-		<net.osmand.plus.widgets.OsmandTextFieldBoxes
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:id="@+id/tag_fb"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -22,23 +23,16 @@
 			app:useDenseSpacing="true"
 			app:hasClearButton="true">
 
-			<com.google.android.material.textfield.TextInputLayout
-				style="@style/Widget.Material3.TextInputLayout.FilledBox"
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/tagEditText"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
-
-				<com.google.android.material.textfield.TextInputEditText
-					android:id="@+id/tagEditText"
-					android:layout_width="match_parent"
-					android:textColor="?attr/active_color_basic"
-					android:hint="@string/hint_tag"
-					android:maxLines="1"
-					android:inputType="text"
-					android:scrollHorizontally="true"
-					android:layout_height="wrap_content" />
-			</com.google.android.material.textfield.TextInputLayout>
-
-		</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+				android:textColor="?attr/active_color_basic"
+				android:hint="@string/hint_tag"
+				android:maxLines="1"
+				android:inputType="text"
+				android:scrollHorizontally="true"
+				android:layout_height="wrap_content" />
+		</com.google.android.material.textfield.TextInputLayout>
 
 		<FrameLayout
 			android:id="@+id/delete_button"
@@ -59,7 +53,8 @@
 
 	</LinearLayout>
 
-	<net.osmand.plus.widgets.OsmandTextFieldBoxes
+	<com.google.android.material.textfield.TextInputLayout
+		style="@style/Widget.Material3.TextInputLayout.FilledBox"
 		android:id="@+id/value_fb"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -69,19 +64,12 @@
 		app:alwaysShowHint="true"
 		app:useDenseSpacing="true">
 
-		<com.google.android.material.textfield.TextInputLayout
-			style="@style/Widget.Material3.TextInputLayout.FilledBox"
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/valueEditText"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-
-			<com.google.android.material.textfield.TextInputEditText
-				android:id="@+id/valueEditText"
-				android:layout_width="match_parent"
-				android:hint="@string/hint_value"
-				android:layout_height="wrap_content" />
-		</com.google.android.material.textfield.TextInputLayout>
-
-	</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+			android:hint="@string/hint_value"
+			android:layout_height="wrap_content" />
+	</com.google.android.material.textfield.TextInputLayout>
 
 	<View
 		android:layout_width="match_parent"

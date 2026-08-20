@@ -15,9 +15,7 @@
 		android:focusable="true"
 		android:focusableInTouchMode="true"
 		android:minHeight="@dimen/favorites_list_item_height"
-		app:labelText="@string/enter_verification_code"
-		app:primaryColor="@color/coordinate_input_edit_text_activated"
-		app:secondaryColor="@color/text_color_tertiary_light">
+		android:hint="@string/enter_verification_code">
 
 		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/edit_text"

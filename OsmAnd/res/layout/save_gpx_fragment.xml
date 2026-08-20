@@ -25,9 +25,7 @@
 		android:paddingEnd="@dimen/content_padding"
 		android:paddingRight="@dimen/content_padding"
 		android:paddingBottom="@dimen/content_padding_small"
-
-		app:secondaryColor="?android:textColorSecondary"
-		app:labelText="@string/gpx_file_name">
+		android:hint="@string/gpx_file_name">
 
 		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/name_edit_text"

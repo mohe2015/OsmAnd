@@ -18,15 +18,21 @@
 		app:primaryColor="@color/coordinate_input_edit_text_activated"
 		app:secondaryColor="@color/text_color_tertiary_light">
 
-		<studio.carbonylgroup.textfieldboxes.ExtendedEditText
-			android:id="@+id/edit_text"
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="textEmailAddress"
-			android:maxLines="1"
-			android:saveEnabled="false"
-			tools:text="test@test.com" />
+			android:layout_height="wrap_content">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/edit_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="textEmailAddress"
+				android:maxLines="1"
+				android:saveEnabled="false"
+				tools:text="test@test.com" />
+		</com.google.android.material.textfield.TextInputLayout>
 
 	</net.osmand.plus.widgets.OsmandTextFieldBoxes>
 
@@ -42,15 +48,21 @@
 		app:primaryColor="@color/coordinate_input_edit_text_activated"
 		app:secondaryColor="@color/text_color_tertiary_light">
 
-		<studio.carbonylgroup.textfieldboxes.ExtendedEditText
-			android:id="@+id/promocode_edit_text"
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="textEmailAddress"
-			android:maxLines="1"
-			android:saveEnabled="false"
-			tools:text="12345" />
+			android:layout_height="wrap_content">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/promocode_edit_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="textEmailAddress"
+				android:maxLines="1"
+				android:saveEnabled="false"
+				tools:text="12345" />
+		</com.google.android.material.textfield.TextInputLayout>
 
 	</net.osmand.plus.widgets.OsmandTextFieldBoxes>
 

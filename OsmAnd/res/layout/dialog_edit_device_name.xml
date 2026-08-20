@@ -110,16 +110,21 @@
 			android:layout_gravity="start"
 			>
 
-			<studio.carbonylgroup.textfieldboxes.ExtendedEditText
-				android:id="@+id/description"
+			<com.google.android.material.textfield.TextInputLayout
+				style="@style/Widget.Material3.TextInputLayout.FilledBox"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:inputType="numberDecimal"
-				android:scrollHorizontally="false"
-				android:maxLines="4"
-				android:gravity="start|center_vertical"
-				app:suffixTextColor="?android:textColorSecondary"
-				/>
+				android:layout_height="wrap_content">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/description"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:inputType="numberDecimal"
+					android:scrollHorizontally="false"
+					android:maxLines="4"
+					android:gravity="start|center_vertical"
+					app:suffixTextColor="?android:textColorSecondary" />
+			</com.google.android.material.textfield.TextInputLayout>
 
 		</net.osmand.plus.widgets.OsmandTextFieldBoxes>
 

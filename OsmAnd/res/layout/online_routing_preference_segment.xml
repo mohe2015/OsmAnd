@@ -144,15 +144,21 @@
             app:primaryColor="@color/active_color_primary_dark"
             app:secondaryColor="?android:textColorSecondary">
 
-            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                android:id="@+id/edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine|textNoSuggestions"
-                android:maxLines="4"
-                android:saveEnabled="false"
-                android:scrollHorizontally="false"
-                tools:text="Text" />
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:maxLines="4"
+                    android:saveEnabled="false"
+                    android:scrollHorizontally="false"
+                    tools:text="Text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </net.osmand.plus.widgets.OsmandTextFieldBoxes>
 

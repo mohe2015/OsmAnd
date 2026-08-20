@@ -16,12 +16,18 @@
 		android:paddingEnd="@dimen/content_padding"
 		android:paddingStart="@dimen/content_padding">
 
-		<studio.carbonylgroup.textfieldboxes.ExtendedEditText
-			android:id="@+id/edit_text"
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:imeOptions="actionDone"
-			android:inputType="textMultiLine" />
+			android:layout_height="wrap_content">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/edit_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:imeOptions="actionDone"
+				android:inputType="textMultiLine" />
+		</com.google.android.material.textfield.TextInputLayout>
 
 	</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 

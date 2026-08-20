@@ -430,9 +430,6 @@ dependencies {
 	debugImplementation "net.osmand:MPAndroidChart:custom-snapshot-debug@aar"
 	releaseImplementation "net.osmand:MPAndroidChart:custom-snapshot-release@aar"
 
-	implementation("com.github.mohe2015:TextFieldBoxes:1.4.5") {
-		exclude group: 'com.android.support'
-	}
 	implementation('com.github.scribejava:scribejava-apis:7.1.1')
 	implementation 'com.jaredrummler:colorpicker:1.1.0'
 	implementation 'org.bouncycastle:bcpkix-jdk15on:1.56'

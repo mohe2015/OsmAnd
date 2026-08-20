@@ -21,13 +21,19 @@
 		app:errorColor="@color/color_invalid"
 		app:labelText="@string/shared_string_name">
 
-		<studio.carbonylgroup.textfieldboxes.ExtendedEditText
-			android:id="@+id/profile_name_et"
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:inputType="textMultiLine"
-			android:scrollHorizontally="false"
-			android:maxLines="4" />
+			android:layout_height="wrap_content">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/profile_name_et"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="textMultiLine"
+				android:scrollHorizontally="false"
+				android:maxLines="4"  />
+		</com.google.android.material.textfield.TextInputLayout>
 
 	</net.osmand.plus.widgets.OsmandTextFieldBoxes>
 </LinearLayout>

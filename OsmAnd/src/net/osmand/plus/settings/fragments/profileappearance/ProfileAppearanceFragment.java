@@ -126,19 +126,6 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 			applyButton.setTitleId(R.string.shared_string_apply);
 			applyButton.setOnClickListener(v -> screenController.onSaveButtonClicked(getActivity()));
 			AndroidUtils.setBackground(getContext(), buttonsContainer, getListBgColorId(nightMode));
-
-			getListView().addOnScrollListener(new RecyclerView.OnScrollListener() {
-				@Override
-				public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-					super.onScrollStateChanged(recyclerView, newState);
-					if (newState != RecyclerView.SCROLL_STATE_IDLE) {
-						hideKeyboard();
-						if (profileName != null) {
-							profileName.clearFocus();
-						}
-					}
-				}
-			});
 		}
 		updateApplyButtonEnable();
 		return view;
@@ -208,18 +195,10 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 					}
 				}
 			});
-			profileName.setOnFocusChangeListener((v, hasFocus) -> {
-				if (hasFocus) {
-					profileName.setSelection(profileName.getText().length());
-					AndroidUtils.showSoftKeyboard(requireActivity(), profileName);
-				}
-			});
 			if (screenController.isNotAllParamsEditable()) {
-				profileName.setFocusableInTouchMode(false);
-				profileName.setFocusable(false);
+				profileName.setEnabled(false);
 			}
 			profileNameOtfb = (TextInputLayout) holder.findViewById(R.id.profile_name_otfb);
-			updateProfileNameAppearance();
 		} else if (COLORS_CARD.equals(key)) {
 			bindCard(holder, new ColorsPaletteCard(activity, screenController.getColorsCardController(), appMode, false));
 		} else if (PROFILE_ICON_CARD.equals(key)) {
@@ -258,11 +237,6 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 	}
 
 	@Override
-	public void updateColorItems() {
-		updateProfileNameAppearance();
-	}
-
-	@Override
 	public void updateOptionsCard() {
 		Preference viewAnglePref = findPreference(settings.VIEW_ANGLE_VISIBILITY.getId());
 		viewAnglePref.setSummary(screenController.getViewAngleVisibility().getNameId());
@@ -272,14 +246,6 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 
 	public void updateApplyButtonEnable() {
 		applyButton.setEnabled(screenController.hasChanges() && !hasNameError);
-	}
-
-	private void updateProfileNameAppearance() {
-		if (profileName != null && profileName.isFocusable() && profileName.isFocusableInTouchMode()) {
-			int selectedColor = screenController.getActualColor(isNightMode());
-			//profileNameOtfb.setPrimaryColor(selectedColor);
-			profileName.getBackground().mutate().setColorFilter(selectedColor, PorterDuff.Mode.SRC_ATOP);
-		}
 	}
 
 	public void showNewProfileSavingDialog(@Nullable DialogInterface.OnShowListener showListener) {

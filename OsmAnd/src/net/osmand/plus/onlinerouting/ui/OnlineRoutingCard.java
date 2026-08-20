@@ -167,7 +167,7 @@ public class OnlineRoutingCard extends MapBaseCard {
 
 	public void setFieldBoxLabelText(@NonNull String labelText) {
 		showElements(fieldBoxContainer);
-		textFieldBoxes.setLabelText(labelText);
+		textFieldBoxes.setHint(labelText);
 	}
 
 	public void hideFieldBoxLabel() {

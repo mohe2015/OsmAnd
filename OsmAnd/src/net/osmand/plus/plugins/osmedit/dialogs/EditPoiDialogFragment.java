@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -251,7 +252,7 @@ public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 					if (!app.isApplicationInitializing()) {
 						PoiCategory category = editPoiData.getPoiCategory();
 						if (category != null) {
-							poiTypeTextInputLayout.setLabelText(category.getTranslation());
+							poiTypeTextInputLayout.setHint(category.getTranslation());
 						}
 					}
 				}
@@ -260,9 +261,9 @@ public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 		poiNameEditText.setOnEditorActionListener(mOnEditorActionListener);
 		poiTypeEditText.setOnEditorActionListener(mOnEditorActionListener);
 
-		AppCompatImageButton expandButton = poiTypeTextInputLayout.getEndIconImageButton();
-		expandButton.setColorFilter(R.color.gpx_chart_red);
-		expandButton.setOnClickListener(v -> {
+		Drawable expandButton = poiTypeTextInputLayout.getEndIconDrawable();
+		expandButton.setColorFilter(getResources().getColor(R.color.gpx_chart_red), PorterDuff.Mode.SRC_ATOP);
+		poiTypeTextInputLayout.setEndIconOnClickListener(v -> {
 			PoiCategory category = editPoiData.getPoiCategory();
 			if (category != null) {
 				PoiSubTypeDialogFragment.showInstance(getChildFragmentManager(), category, this::setSubCategory);
@@ -575,8 +576,9 @@ public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 				return lhs.toString().compareTo(rhs.toString());
 			}
 		});
-		poiTypeEditText.setAdapter(adapter);
-		poiTypeEditText.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+		//poiTypeEditText.setAdapter(adapter);
+		// TODO FIXME
+		/*poiTypeEditText.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -588,7 +590,7 @@ public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 			}
-		});
+		});*/
 
 	}
 

@@ -18,10 +18,7 @@
 			android:id="@+id/tag_fb"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			app:alwaysShowHint="true"
-			app:useDenseSpacing="true"
-			>
+			android:layout_weight="1">
 
 			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/tagEditText"
@@ -59,10 +56,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="@dimen/content_padding_small_half"
-		android:layout_marginHorizontal="@dimen/content_padding"
-
-		app:alwaysShowHint="true"
-		app:useDenseSpacing="true">
+		android:layout_marginHorizontal="@dimen/content_padding">
 
 		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/valueEditText"

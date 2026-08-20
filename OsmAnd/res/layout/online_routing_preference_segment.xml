@@ -139,11 +139,7 @@
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            app:errorColor="@color/color_invalid"
-            app:helperTextColor="?android:textColorSecondary"
-            tools:labelText="Hint"
-            app:primaryColor="@color/active_color_primary_dark"
-            app:secondaryColor="?android:textColorSecondary">
+            tools:labelText="Hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text"

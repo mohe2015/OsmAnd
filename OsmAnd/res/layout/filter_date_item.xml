@@ -26,10 +26,7 @@
 			android:layout_weight="1"
 			android:focusable="true"
 			android:focusableInTouchMode="true"
-			app:errorColor="@color/color_invalid"
-			app:labelText="@string/route_from"
-			app:primaryColor="@color/active_color_primary_dark"
-			app:secondaryColor="?android:textColorSecondary">
+			android:hint="@string/route_from">
 
 			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/value_from_et"

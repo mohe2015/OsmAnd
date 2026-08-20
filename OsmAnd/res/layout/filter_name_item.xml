@@ -16,10 +16,7 @@
 		android:focusable="true"
 
 		android:focusableInTouchMode="true"
-		app:primaryColor="@color/active_color_primary_dark"
-		app:secondaryColor="?android:textColorSecondary"
-		app:errorColor="@color/color_invalid"
-		app:labelText="@string/filter_by_name">
+		android:hint="@string/filter_by_name">
 
 		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/query_et"

@@ -50,11 +50,7 @@
 					android:layout_marginEnd="@dimen/content_padding"
 					android:importantForAutofill="noExcludeDescendants"
 					app:colorControlHighlight="@color/color_transparent"
-					app:labelText="@string/shared_string_name"
-					app:panelBackgroundColor="@color/color_transparent"
-					app:primaryColor="@color/card_and_list_background_light"
-					app:secondaryColor="@color/white_50_transparent"
-					app:useDenseSpacing="true">
+					android:hint="@string/shared_string_name">
 
 					<com.google.android.material.textfield.TextInputEditText
 						android:id="@+id/poiNameEditText"
@@ -92,11 +88,7 @@
 					android:layout_marginStart="24dp"
 					android:layout_weight="1"
 					android:importantForAutofill="noExcludeDescendants"
-					app:endIcon="@drawable/ic_action_arrow_drop_down"
-					app:labelText="@string/poi_dialog_poi_type"
-					app:panelBackgroundColor="@color/color_transparent"
-					app:primaryColor="@color/card_and_list_background_light"
-					app:secondaryColor="@color/white_50_transparent">
+					android:hint="@string/poi_dialog_poi_type">
 
 					<com.google.android.material.textfield.TextInputEditText
 						android:id="@+id/poiTypeEditText"

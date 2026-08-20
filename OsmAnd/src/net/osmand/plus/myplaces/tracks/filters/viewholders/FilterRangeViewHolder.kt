@@ -181,11 +181,11 @@ open class FilterRangeViewHolder(
 	fun bindView(filter: RangeTrackFilter<*>) {
 		this.filter = filter
 		title.text = filter.trackFilterType.getName()
-		valueFromInputContainer.labelText =
+		valueFromInputContainer.hint =
 			"${app.getString(R.string.shared_string_from)}, ${
 				MeasureUnitsFormatter.getUnitsLabel(app, getMeasureUnitType())
 			}"
-		valueToInputContainer.labelText =
+		valueToInputContainer.hint =
 			"${app.getString(R.string.shared_string_to)}, ${
 				MeasureUnitsFormatter.getUnitsLabel(app, getMeasureUnitType())
 			}"

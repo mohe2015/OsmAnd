@@ -307,6 +307,8 @@ tasks.register('collectExternalResources') {
 }
 
 // Legacy core build
+
+import groovy.xml.XmlParser
 import org.apache.tools.ant.taskdefs.condition.Os
 
 tasks.register('buildOsmAndCore', Exec) {

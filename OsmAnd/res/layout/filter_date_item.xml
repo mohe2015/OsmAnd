@@ -50,11 +50,7 @@
 			android:layout_weight="1"
 			android:focusable="false"
 			android:focusableInTouchMode="false"
-			app:errorColor="@color/color_invalid"
-			app:hasFocus="false"
-			app:labelText="@string/route_to"
-			app:primaryColor="@color/active_color_primary_dark"
-			app:secondaryColor="?android:textColorSecondary">
+			android:hint="@string/route_to">
 
 			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/value_to_et"

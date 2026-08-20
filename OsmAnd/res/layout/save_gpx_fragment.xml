@@ -25,7 +25,7 @@
 		android:paddingEnd="@dimen/content_padding"
 		android:paddingRight="@dimen/content_padding"
 		android:paddingBottom="@dimen/content_padding_small"
-		app:hasClearButton="true"
+
 		app:secondaryColor="?android:textColorSecondary"
 		app:labelText="@string/gpx_file_name">
 

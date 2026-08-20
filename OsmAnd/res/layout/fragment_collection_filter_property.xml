@@ -37,7 +37,7 @@
 			android:layout_margin="@dimen/list_content_padding"
 			android:focusable="true"
 			android:focusableInTouchMode="true"
-			app:hasClearButton="true"
+
 			app:labelText="@string/filter_by_name"
 			app:primaryColor="@color/active_color_primary_dark"
 			app:secondaryColor="?android:textColorSecondary">

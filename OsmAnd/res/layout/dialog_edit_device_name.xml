@@ -105,9 +105,6 @@
 			android:layout_margin="@dimen/list_content_padding"
 			android:focusable="true"
 			android:focusableInTouchMode="true"
-			app:primaryColor="@color/active_color_primary_dark"
-			app:secondaryColor="?android:textColorSecondary"
-			app:hasClearButton="true"
 			android:layout_gravity="start">
 
 			<com.google.android.material.textfield.TextInputEditText

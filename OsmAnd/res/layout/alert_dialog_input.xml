@@ -9,8 +9,6 @@
 		android:id="@+id/text_box"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:hasClearButton="true"
-		app:secondaryColor="?android:textColorSecondary"
 		android:layout_marginTop="@dimen/dialog_content_bottom_margin"
 		android:layout_marginHorizontal="@dimen/dialog_content_margin">
 

@@ -21,7 +21,7 @@
 			android:layout_weight="1"
 			app:alwaysShowHint="true"
 			app:useDenseSpacing="true"
-			app:hasClearButton="true">
+			>
 
 			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/tagEditText"
@@ -60,7 +60,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginTop="@dimen/content_padding_small_half"
 		android:layout_marginHorizontal="@dimen/content_padding"
-		app:hasClearButton="true"
+
 		app:alwaysShowHint="true"
 		app:useDenseSpacing="true">
 

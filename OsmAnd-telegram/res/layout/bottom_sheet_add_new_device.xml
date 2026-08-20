@@ -56,7 +56,7 @@
 					android:layout_height="wrap_content"
 					android:paddingLeft="@dimen/content_padding_standard"
 					android:paddingRight="@dimen/content_padding_standard"
-					app:hasClearButton="true"
+
 					app:labelText="@string/device_name">
 
 					<com.google.android.material.textfield.TextInputEditText

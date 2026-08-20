@@ -15,9 +15,7 @@
 		android:layout_marginTop="@dimen/text_margin_small"
 		android:paddingLeft="@dimen/content_padding"
 		android:paddingRight="@dimen/content_padding"
-		app:labelText="@string/enter_path_to_folder"
-		app:primaryColor="?android:textColorPrimary"
-		app:secondaryColor="?android:textColorSecondary"
+		android:hint="@string/enter_path_to_folder"
 		android:paddingStart="@dimen/content_padding"
 		android:paddingEnd="@dimen/content_padding">
 

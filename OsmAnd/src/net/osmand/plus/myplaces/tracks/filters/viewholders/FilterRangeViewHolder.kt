@@ -6,6 +6,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.slider.RangeSlider
 import com.google.android.material.slider.RangeSlider.OnSliderTouchListener
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import net.osmand.plus.OsmandApplication
 import net.osmand.plus.R
 import net.osmand.plus.helpers.AndroidUiHelper
@@ -13,13 +15,11 @@ import net.osmand.plus.myplaces.tracks.MeasureUnitsFormatter
 import net.osmand.plus.utils.FormattedValue
 import net.osmand.plus.utils.OsmAndFormatter
 import net.osmand.plus.utils.UiUtilities
-import net.osmand.plus.widgets.OsmandTextFieldBoxes
 import net.osmand.plus.widgets.TextViewEx
 import net.osmand.plus.widgets.tools.SimpleTextWatcher
 import net.osmand.shared.gpx.filters.MeasureUnitType
 import net.osmand.shared.gpx.filters.RangeTrackFilter
 import net.osmand.util.Algorithms
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.Locale
@@ -44,10 +44,10 @@ open class FilterRangeViewHolder(
 	private val explicitIndicator: ImageView
 	private val slider: RangeSlider
 	private lateinit var filter: RangeTrackFilter<*>
-	private lateinit var valueFromInput: ExtendedEditText
-	private lateinit var valueToInput: ExtendedEditText
-	private val valueFromInputContainer: OsmandTextFieldBoxes
-	private val valueToInputContainer: OsmandTextFieldBoxes
+	private lateinit var valueFromInput: TextInputEditText
+	private lateinit var valueToInput: TextInputEditText
+	private val valueFromInputContainer: TextInputLayout
+	private val valueToInputContainer: TextInputLayout
 	private var isSliderDragging = false
 
 	private val decimalFormat: DecimalFormat
@@ -244,7 +244,7 @@ open class FilterRangeViewHolder(
 	}
 
 	private fun updateInputField(
-		input: ExtendedEditText,
+		input: TextInputEditText,
 		value: Int,
 		isDefault: Boolean,
 		fromUser: Boolean

@@ -40,6 +40,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import net.osmand.CallbackWithObject;
 import net.osmand.PlatformUtil;
@@ -74,7 +76,6 @@ import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.InsetTarget;
 import net.osmand.plus.utils.InsetTargetsCollection;
 import net.osmand.plus.utils.InsetsUtils.InsetSide;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
 import net.osmand.util.Algorithms;
 
@@ -84,7 +85,6 @@ import java.io.Serializable;
 import java.util.*;
 import java.util.Map.Entry;
 
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText;
 
 public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 
@@ -113,10 +113,10 @@ public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 
 	private EditPoiData editPoiData;
 	private ViewPager2 viewPager;
-	private ExtendedEditText poiTypeEditText;
+	private TextInputEditText poiTypeEditText;
 
 	private OnSaveButtonClickListener onSaveButtonClickListener;
-	private OsmandTextFieldBoxes poiTypeTextInputLayout;
+	private TextInputLayout poiTypeTextInputLayout;
 	private View view;
 
 	@Override
@@ -221,7 +221,7 @@ public class EditPoiDialogFragment extends BaseFullScreenDialogFragment {
 		poiTypeButton.setOnClickListener(v ->
 				PoiTypeDialogFragment.showInstance(getChildFragmentManager(), this::setPoiCategory));
 
-		ExtendedEditText poiNameEditText = view.findViewById(R.id.poiNameEditText);
+		TextInputEditText poiNameEditText = view.findViewById(R.id.poiNameEditText);
 		AndroidUtils.setTextHorizontalGravity(poiNameEditText, Gravity.START);
 		poiNameEditText.addTextChangedListener(new SimpleTextWatcher() {
 			@Override

@@ -28,7 +28,6 @@ import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.R;
 import net.osmand.plus.base.BottomSheetDialogFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 
 import java.util.Date;
 import java.util.Objects;
@@ -81,8 +80,8 @@ public class SaveAsTrackBottomSheetDialogFragment extends BottomSheetDialogFragm
 		if (nightMode) {
 			if (textBox instanceof TextInputLayout) {
 				((TextInputLayout) textBox).setHintTextAppearance(R.style.TextAppearance_App_DarkTextInputLayout);
-			} else if (textBox instanceof OsmandTextFieldBoxes) {
-				((OsmandTextFieldBoxes) textBox).setPrimaryColor(ContextCompat.getColor(app, R.color.active_color_primary_dark));
+			} else if (textBox instanceof TextInputLayout) {
+				//((TextInputLayout) textBox).setPrimaryColor(ContextCompat.getColor(app, R.color.active_color_primary_dark));
 			}
 		}
 

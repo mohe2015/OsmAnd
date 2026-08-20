@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.settings.backend.ApplicationMode;
 import net.osmand.plus.R;
@@ -21,8 +23,6 @@ import net.osmand.plus.base.bottomsheetmenu.simpleitems.TitleItem;
 import net.osmand.plus.settings.fragments.OnPreferenceChanged;
 import net.osmand.plus.settings.preferences.EditTextPreferenceEx;
 import net.osmand.util.Algorithms;
-
-import studio.carbonylgroup.textfieldboxes.TextFieldBoxes;
 
 public class EditTextPreferenceBottomSheet extends BasePreferenceBottomSheet {
 
@@ -62,7 +62,7 @@ public class EditTextPreferenceBottomSheet extends BasePreferenceBottomSheet {
 
 		String description = editTextPreference.getDescription();
 		if (!Algorithms.isEmpty(description)) {
-			TextFieldBoxes textFieldBoxes = view.findViewById(R.id.text_field_box);
+			TextInputLayout textFieldBoxes = view.findViewById(R.id.text_field_box);
 			textFieldBoxes.setHelperText(description);
 		}
 

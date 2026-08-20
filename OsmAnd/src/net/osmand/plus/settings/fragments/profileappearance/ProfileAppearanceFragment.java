@@ -31,6 +31,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.PlatformUtil;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
@@ -46,7 +48,6 @@ import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.InsetTargetsCollection;
 import net.osmand.plus.utils.UiUtilities;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.dialogbutton.DialogButton;
 import net.osmand.plus.widgets.dialogbutton.DialogButtonType;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
@@ -78,7 +79,7 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 	private ProfileAppearanceController screenController;
 	private ProgressDialog progress;
 	private EditText profileName;
-	private OsmandTextFieldBoxes profileNameOtfb;
+	private TextInputLayout profileNameOtfb;
 	private DialogButton applyButton;
 
 	private boolean hasNameError;
@@ -217,7 +218,7 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 				profileName.setFocusableInTouchMode(false);
 				profileName.setFocusable(false);
 			}
-			profileNameOtfb = (OsmandTextFieldBoxes) holder.findViewById(R.id.profile_name_otfb);
+			profileNameOtfb = (TextInputLayout) holder.findViewById(R.id.profile_name_otfb);
 			updateProfileNameAppearance();
 		} else if (COLORS_CARD.equals(key)) {
 			bindCard(holder, new ColorsPaletteCard(activity, screenController.getColorsCardController(), appMode, false));
@@ -276,7 +277,7 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 	private void updateProfileNameAppearance() {
 		if (profileName != null && profileName.isFocusable() && profileName.isFocusableInTouchMode()) {
 			int selectedColor = screenController.getActualColor(isNightMode());
-			profileNameOtfb.setPrimaryColor(selectedColor);
+			//profileNameOtfb.setPrimaryColor(selectedColor);
 			profileName.getBackground().mutate().setColorFilter(selectedColor, PorterDuff.Mode.SRC_ATOP);
 		}
 	}
@@ -336,7 +337,7 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 
 	private void disableSaveButtonWithErrorMessage(String errorMessage) {
 		hasNameError = true;
-		profileNameOtfb.setError(errorMessage, true);
+		profileNameOtfb.setError(errorMessage);
 		updateApplyButtonEnable();
 	}
 

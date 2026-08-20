@@ -15,6 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.plugins.osmedit.data.EditPoiData;
@@ -23,17 +26,14 @@ import net.osmand.plus.plugins.osmedit.fragments.EditPoiContentAdapter.EditPoiLi
 import net.osmand.plus.plugins.osmedit.fragments.AdvancedEditPoiFragment.OsmTagsArrayAdapter;
 import net.osmand.plus.plugins.osmedit.fragments.AdvancedEditPoiFragment.TagItem;
 import net.osmand.plus.utils.AndroidUtils;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
 import net.osmand.util.Algorithms;
 
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText;
-
 public class TagItemHolder extends RecyclerView.ViewHolder {
 
-	private final OsmandTextFieldBoxes tagFB;
-	private final OsmandTextFieldBoxes valueFB;
-	private final ExtendedEditText tagEditText;
+	private final TextInputLayout tagFB;
+	private final TextInputLayout valueFB;
+	private final TextInputEditText tagEditText;
 	private final AutoCompleteTextView valueEditText;
 	private final View deleteButton;
 	private final OsmTagsArrayAdapter tagAdapter;

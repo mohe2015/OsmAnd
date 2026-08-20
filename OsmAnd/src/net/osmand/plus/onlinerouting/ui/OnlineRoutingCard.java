@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.CallbackWithObject;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
@@ -23,7 +25,6 @@ import net.osmand.plus.settings.backend.ApplicationMode;
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.UiUtilities;
 import net.osmand.plus.utils.UiUtilities.CompoundButtonType;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.chips.ChipItem;
 import net.osmand.plus.widgets.chips.HorizontalChipsView;
 
@@ -40,7 +41,7 @@ public class OnlineRoutingCard extends MapBaseCard {
 	private CheckBox checkBox;
 	private TextView tvCheckBoxDescription;
 	private View fieldBoxContainer;
-	private OsmandTextFieldBoxes textFieldBoxes;
+	private TextInputLayout textFieldBoxes;
 	private EditText editText;
 	private TextView tvHelperText;
 	private TextView tvErrorText;
@@ -81,8 +82,8 @@ public class OnlineRoutingCard extends MapBaseCard {
 		button = view.findViewById(R.id.button);
 
 		int activeColor = appMode.getProfileColor(nightMode);
-		textFieldBoxes.setPrimaryColor(activeColor);
-		textFieldBoxes.setGravityFloatingLabel(Gravity.START);
+		//textFieldBoxes.setPrimaryColor(activeColor);
+		//textFieldBoxes.setGravityFloatingLabel(Gravity.START);
 
 		editText.addTextChangedListener(new SimpleTextWatcher() {
 			@Override
@@ -170,7 +171,7 @@ public class OnlineRoutingCard extends MapBaseCard {
 	}
 
 	public void hideFieldBoxLabel() {
-		textFieldBoxes.makeCompactPadding();
+		//textFieldBoxes.makeCompactPadding();
 	}
 
 	public void setFieldBoxHelperText(@NonNull String helperText) {

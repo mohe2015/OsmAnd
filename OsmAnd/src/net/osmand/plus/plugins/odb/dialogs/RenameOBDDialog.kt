@@ -11,6 +11,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import net.osmand.plus.R
 import net.osmand.plus.base.BaseFullScreenDialogFragment
 import net.osmand.plus.helpers.AndroidUiHelper
@@ -19,15 +21,13 @@ import net.osmand.plus.plugins.odb.VehicleMetricsPlugin
 import net.osmand.plus.utils.AndroidUtils
 import net.osmand.plus.utils.ColorUtilities
 import net.osmand.plus.utils.ColorUtilities.getStatusBarSecondaryColor
-import net.osmand.plus.widgets.OsmandTextFieldBoxes
 import net.osmand.plus.widgets.alert.AlertDialogData
 import net.osmand.plus.widgets.alert.CustomAlert
 import net.osmand.shared.data.BTDeviceInfo
 import net.osmand.util.Algorithms
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText
 
 class RenameOBDDialog : BaseFullScreenDialogFragment() {
-	private var textInput: ExtendedEditText? = null
+	private var textInput: TextInputEditText? = null
 	private var propertyOldValueValue: String? = null
 	private var deviceAddress: String? = null
 	private var isBLE: Boolean = false
@@ -43,11 +43,11 @@ class RenameOBDDialog : BaseFullScreenDialogFragment() {
 		val propertyName = view.findViewById<TextView>(R.id.property_name)
 		textInput = view.findViewById(R.id.description)
 		textInput?.requestFocus()
-		val propertyValueView = view.findViewById<OsmandTextFieldBoxes>(R.id.property_value)
-		propertyValueView.setClearButton(
+		val propertyValueView = view.findViewById<TextInputLayout>(R.id.property_value)
+		/*propertyValueView.setClearButton(
 			app.uiUtilities.getIcon(
 				R.drawable.ic_action_cancel,
-				nightMode))
+				nightMode))*/
 		view.findViewById<View>(R.id.btn_close).setOnClickListener { v: View? ->
 			if (shouldClose()) {
 				dismiss()
@@ -62,7 +62,7 @@ class RenameOBDDialog : BaseFullScreenDialogFragment() {
 			isBLE = args.getBoolean(BLE_KEY)
 			textInput?.inputType = EditorInfo.TYPE_CLASS_TEXT
 			propertyName.setText(R.string.shared_string_name)
-			propertyValueView.hasClearButton = true
+			//propertyValueView.hasClearButton = true
 			plugin?.let {
 				val pairedDevices = plugin.getUsedOBDDevicesList()
 				device = pairedDevices.find { it.address == deviceAddress }

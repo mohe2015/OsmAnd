@@ -58,7 +58,7 @@ public class EditDevicePropertyDialog extends BaseFullScreenDialogFragment {
 		textInput.requestFocus();
 
 		propertyValueView = view.findViewById(R.id.property_value);
-		propertyValueView.setClearButton(getContentIcon(R.drawable.ic_action_cancel));
+		//propertyValueView.setClearButton(getContentIcon(R.drawable.ic_action_cancel));
 
 		view.findViewById(R.id.btn_close).setOnClickListener(v -> {
 			if (shouldClose()) {
@@ -77,15 +77,16 @@ public class EditDevicePropertyDialog extends BaseFullScreenDialogFragment {
 			property = DeviceChangeableProperty.values()[propertyId];
 			textInput.setInputType(property.getInputType());
 			propertyName.setText(property.getDisplayNameResId());
-			propertyValueView.setHasClearButton(property == DeviceChangeableProperty.NAME);
+			//propertyValueView.setHasClearButton(property == DeviceChangeableProperty.NAME);
 			ExternalSensorsPlugin plugin = PluginsHelper.getPlugin(ExternalSensorsPlugin.class);
 			if (plugin != null) {
 				int unitsId = property.getUnitsResId(app, false);
 				if (unitsId != 0) {
 					if (AndroidUtils.isLayoutRtl(view.getContext())) {
-						textInput.setPrefix(app.getString(unitsId));
+						// TODO FIXME
+						//textInput.setPrefix(app.getString(unitsId));
 					} else {
-						textInput.setSuffix(app.getString(unitsId));
+						//textInput.setSuffix(app.getString(unitsId));
 					}
 
 				}

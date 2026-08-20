@@ -423,8 +423,8 @@ public class AddPOIAction extends SelectMapLocationAction {
 			});
 			TextInputEditText valueEditText = convertView.findViewById(R.id.valueEditText);
 			tagEditText.setText(tg);
-			tagEditText.setAdapter(tagAdapter);
-			tagEditText.setThreshold(1);
+			//tagEditText.setAdapter(tagAdapter);
+			//tagEditText.setThreshold(1);
 			tagEditText.setOnFocusChangeListener((v, hasFocus) -> {
 				if (!hasFocus) {
 					//tagFB.hideClearButton();

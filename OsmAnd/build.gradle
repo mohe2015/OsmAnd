@@ -1,8 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 apply plugin: 'com.android.application'
 apply from: 'build-common.gradle'
 apply from: rootProject.file("versions.gradle")
 
-apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 
@@ -21,6 +22,12 @@ apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 //            </patternset>
 //        </unzip>
 // Less important
+
+kotlin {
+	compilerOptions {
+		jvmTarget = JvmTarget.JVM_17
+	}
+}
 
 android {
 	signingConfigs {
@@ -43,10 +50,6 @@ android {
 		sourceCompatibility = JavaVersion.VERSION_17
 		targetCompatibility = JavaVersion.VERSION_17
 		coreLibraryDesugaringEnabled true
-	}
-
-	kotlinOptions {
-		jvmTarget = "17"
 	}
 
 	defaultConfig {

@@ -1,11 +1,10 @@
 apply plugin: 'com.android.library'
-apply plugin: 'ivy-publish'
-apply from: 'build-common.gradle'
-apply from: rootProject.file("versions.gradle")
-
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+apply plugin: 'ivy-publish'
+apply from: 'build-common.gradle'
+apply from: rootProject.file("versions.gradle")
 
 android {
 
@@ -31,6 +30,7 @@ android {
 		main {
 			manifest.srcFile "AndroidManifest-library.xml"
 			java.srcDirs = ["src", "src-gms", "src-google"]
+			kotlin.srcDirs = ["src", "src-gms", "src-google"]
 		}
 	}
 

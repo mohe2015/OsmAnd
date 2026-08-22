@@ -421,7 +421,7 @@ dependencies {
 	implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
 	implementation "net.osmand:antpluginlib:3.8.0@aar"
 	// JS core
-	implementation "org.mozilla:rhino:1.9.1"
+	implementation "org.mozilla:rhino:1.7.9"
 // size restrictions
 // implementation 'com.ibm.icu:icu4j:50.1'
 // implementation 'net.sf.trove4j:trove4j:3.0.3'

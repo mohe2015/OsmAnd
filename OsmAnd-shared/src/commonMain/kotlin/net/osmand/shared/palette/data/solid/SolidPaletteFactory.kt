@@ -17,7 +17,7 @@ object SolidPaletteFactory {
 		val newItems = ArrayList<PaletteItem.Solid>()
 
 		// Use current time to ensure correct sorting in "Last Used" mode
-		val baseTime = Clock.System.now().toEpochMilliseconds()
+		val baseTime = kotlin.time.Clock.System.now().toEpochMilliseconds()
 
 		defaultColors.forEachIndexed { index, colorInt ->
 			val stableId = index.toString()

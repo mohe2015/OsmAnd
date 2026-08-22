@@ -77,7 +77,7 @@ object GradientPaletteIO : PaletteIO<Palette.GradientCollection> {
 		val settingsItems = settingsHelper.getItems(category.id)
 		val settingsMap = settingsItems.associateBy { it.paletteName }
 
-		val baseTime = Clock.System.now().toEpochMilliseconds()
+		val baseTime = kotlin.time.Clock.System.now().toEpochMilliseconds()
 
 		// 2. Scan directory
 		val files = paletteDirectory.listFiles() ?: emptyList()

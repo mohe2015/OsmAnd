@@ -40,7 +40,7 @@ class SentenceEvent(val source: Any?, s: Sentence?) {
      *
      * @return Milliseconds timestamp
      */
-    val timeStamp = Clock.System.now().toEpochMilliseconds()
+    val timeStamp = kotlin.time.Clock.System.now().toEpochMilliseconds()
 
     /**
      * Gets the Sentence object that triggered the event.

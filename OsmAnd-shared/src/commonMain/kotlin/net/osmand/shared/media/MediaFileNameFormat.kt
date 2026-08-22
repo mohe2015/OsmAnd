@@ -43,7 +43,7 @@ object MediaFileNameFormat {
 	): String {
 		val normalizedExtension = MediaType.normalizeExtension(extension)
 		val typeName = MediaType.fromExtension(normalizedExtension).typeName
-		val dateTime = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+		val dateTime = kotlin.time.Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
 		var baseName = typeName + "_" + DATE_TIME_FORMATTER.format(dateTime)
 		if (KMapUtils.isValidLatLon(lat, lon)) {
 			baseName += "_" + KMapUtils.createShortLinkString(lat, lon, SHORT_LINK_ZOOM)

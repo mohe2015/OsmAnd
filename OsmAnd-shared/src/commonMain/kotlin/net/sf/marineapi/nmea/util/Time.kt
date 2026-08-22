@@ -89,7 +89,7 @@ class Time {
      * time.
      */
     constructor() {
-        val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+        val now = kotlin.time.Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
         hour = now.hour
         minutes = now.minute
         seconds = now.second + now.nanosecond / 1_000_000_000.0

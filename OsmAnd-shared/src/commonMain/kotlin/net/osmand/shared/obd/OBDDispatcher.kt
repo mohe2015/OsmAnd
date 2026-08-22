@@ -65,10 +65,10 @@ class OBDDispatcher(val debug: Boolean = false) {
 	private suspend fun startReadObdLooper() {
 		log("Start reading obd with $inputStream and $outputStream")
 		val connection = Obd2Connection(createTransport(), this)
-		val startInitTime = Clock.System.now().toEpochMilliseconds()
+		val startInitTime = kotlin.time.Clock.System.now().toEpochMilliseconds()
 		while (!connection.initialize() && coroutineContext.isActive) {
 			delay(initOBDRetryOffset)
-			if (Clock.System.now().toEpochMilliseconds() - startInitTime > initOBDTimeout) {
+			if (kotlin.time.Clock.System.now().toEpochMilliseconds() - startInitTime > initOBDTimeout) {
 				break
 			}
 		}

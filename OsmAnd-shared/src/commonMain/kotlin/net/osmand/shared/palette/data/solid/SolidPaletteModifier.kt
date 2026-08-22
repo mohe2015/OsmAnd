@@ -116,7 +116,7 @@ object SolidPaletteModifier : PaletteModifier<Palette.SolidCollection> {
 		if (index == -1) return palette
 
 		val updatedItem = palette.items[index].copy(
-			lastUsedTime = Clock.System.now().toEpochMilliseconds()
+			lastUsedTime = kotlin.time.Clock.System.now().toEpochMilliseconds()
 		)
 
 		val newItems = palette.items.toMutableList()

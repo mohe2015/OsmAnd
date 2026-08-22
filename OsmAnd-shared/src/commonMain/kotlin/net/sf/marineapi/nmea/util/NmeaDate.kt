@@ -51,7 +51,7 @@ class NmeaDate {
      * Creates a new instance of `Date` using the current date.
      */
     constructor() {
-        val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+        val now = kotlin.time.Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
         year = now.year
         month = now.monthNumber
         day = now.dayOfMonth

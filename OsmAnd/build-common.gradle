@@ -394,9 +394,9 @@ dependencies {
 	implementation 'com.google.android.material:material:1.14.0'
 	implementation 'androidx.browser:browser:1.10.0'
 	implementation 'androidx.preference:preference:1.2.1'
-	implementation 'androidx.lifecycle:lifecycle-process:2.6.0'
+	implementation 'androidx.lifecycle:lifecycle-process:2.11.0'
 	implementation "androidx.activity:activity:1.13.0"
-	implementation platform('androidx.compose:compose-bom:2026.06.00')
+	implementation platform('androidx.compose:compose-bom:2026.08.00')
 	implementation 'androidx.compose.ui:ui'
 	implementation 'androidx.compose.ui:ui-tooling-preview'
 	implementation 'androidx.compose.material3:material3'
@@ -404,8 +404,8 @@ dependencies {
 //	implementation "androidx.core:core:1.16.0"
 	implementation fileTree(include: ['gnu-trove-osmand.jar', 'icu4j-49_1_patched.jar'], dir: 'libs')
 
-	implementation group: 'commons-logging', name: 'commons-logging', version: '1.4.0'
-	implementation 'commons-codec:commons-codec:1.11'
+	implementation "commons-logging:commons-logging:1.4.0"
+    implementation 'commons-codec:commons-codec:1.22.1'
 	implementation 'org.apache.commons:commons-compress:1.28.0'
 	implementation 'com.moparisthebest:junidecode:0.1.1'
 	implementation 'org.immutables:gson:2.12.2'

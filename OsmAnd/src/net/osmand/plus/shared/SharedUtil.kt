@@ -32,6 +32,8 @@ import net.osmand.shared.util.PlatformUtil
 import okio.Okio
 import okio.Sink
 import okio.Source
+import okio.sink
+import okio.source
 import java.io.File
 import java.io.InputStream
 import java.io.OutputStream
@@ -127,7 +129,7 @@ object SharedUtil {
 		extensionsReader: GpxExtensionsReader?,
 		addGeneralTrack: Boolean
 	): GpxFile =
-		GpxUtilities.loadGpxFile(null, Okio.source(inputStream), extensionsReader, addGeneralTrack)
+		GpxUtilities.loadGpxFile(null, inputStream.source(), extensionsReader, addGeneralTrack)
 
 	@JvmStatic
 	fun loadGpxFile(
@@ -147,7 +149,7 @@ object SharedUtil {
 
 	@JvmStatic
 	fun writeGpx(output: OutputStream, file: GpxFile, progress: IProgress?): Exception? =
-		GpxUtilities.writeGpx(null, Okio.sink(output), file, progress)
+		GpxUtilities.writeGpx(null, output.sink(), file, progress)
 
 	@JvmStatic
 	fun writeGpx(output: Sink, file: GpxFile, progress: IProgress?): Exception? =

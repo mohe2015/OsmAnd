@@ -75,6 +75,7 @@ import net.osmand.shared.obd.OBDDispatcher.OBDReadStatusListener
 import net.osmand.shared.obd.OBDSimulationSource
 import net.osmand.shared.settings.enums.MetricsConstants
 import net.osmand.util.Algorithms
+import okio.Okio
 import okio.Sink
 import okio.Source
 import org.json.JSONObject
@@ -541,7 +542,7 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 						LOG.error("IOException on try to connect to OBD ${deviceToConnect.name}")
 					}
 					if (isConnected) {
-						return Pair(inputStream.source(), outputStream.sink())
+						return Pair(Okio.source(inputStream), Okio.sink(outputStream))
 					}
 				}
 				return null

@@ -78,6 +78,8 @@ import net.osmand.util.Algorithms
 import okio.Okio
 import okio.Sink
 import okio.Source
+import okio.sink
+import okio.source
 import org.json.JSONObject
 import java.io.IOException
 import java.util.UUID
@@ -542,7 +544,7 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 						LOG.error("IOException on try to connect to OBD ${deviceToConnect.name}")
 					}
 					if (isConnected) {
-						return Pair(Okio.source(inputStream), Okio.sink(outputStream))
+						return Pair(inputStream.source(), outputStream.sink())
 					}
 				}
 				return null

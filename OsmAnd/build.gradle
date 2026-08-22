@@ -116,6 +116,7 @@ android {
 	buildFeatures {
 		aidl true
 		compose true
+		resValues = true
 	}
 
 	flavorDimensions "version", "coreversion", "abi"

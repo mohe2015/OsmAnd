@@ -1,6 +1,6 @@
 ext {
     osmand_minSdk = 24
     osmand_targetSdk = 35
-    osmand_compileSdk = 36
+    osmand_compileSdk = 37
     osmand_buildToolsVersion = "36.0.0"
 }

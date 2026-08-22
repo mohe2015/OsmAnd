@@ -148,7 +148,7 @@ class OBDMainFragment : OBDDevicesBaseFragment(), VehicleMetricsPlugin.Connectio
 			app.getString(protocolStringId)
 		)
 
-		view.findViewById<ImageView?>(R.id.widget_icon).apply {
+		view.findViewById<ImageView>(R.id.widget_icon).apply {
 			background = uiUtilities.getIcon(
 				if (connected) {
 					if (nightMode) R.drawable.bg_widget_type_icon_dark else R.drawable.bg_widget_type_icon_light

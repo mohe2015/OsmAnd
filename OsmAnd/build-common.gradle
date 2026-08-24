@@ -417,14 +417,20 @@ dependencies {
 	implementation 'com.android.billingclient:billing:9.1.0'
 	// turn off for now
 	//implementation 'com.atilika.kuromoji:kuromoji-ipadic:0.9.0'
-	implementation 'com.squareup.picasso:picasso:2.8' // keep at 2.8 for AndroidX support
+
+	//noinspection NewerVersionAvailable keep at 2.8 for AndroidX support
+	implementation 'com.squareup.picasso:picasso:2.8'
+
 	//implementation("io.coil-kt.coil3:coil-core:3.1.0")
 	//implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
 
 	implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
 	implementation "net.osmand:antpluginlib:3.8.0@aar"
+
 	// JS core
+	//noinspection NewerVersionAvailable Later versions do not work with minSdk < 26
 	implementation "org.mozilla:rhino:1.8.1"
+
 // size restrictions
 // implementation 'com.ibm.icu:icu4j:50.1'
 // implementation 'net.sf.trove4j:trove4j:3.0.3'

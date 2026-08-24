@@ -1,44 +1,10 @@
 <?xml version="1.0" ?>
 <!-- "order" is used for context menu tag priority. Default order is 90. top="true" means that poi will be available in filter -->
 <poi_types>
-	<poi_additional name="name" lang="true" tag="name" type="text"/>
-
-	<poi_additional_category name="fee" icon="fee_yes">
-		<poi_additional name="fee_yes" tag="fee" value="yes"/>
-		<poi_additional name="fee_no" tag="fee" value="no"/>
-	</poi_additional_category>
-
-	<poi_category name="shop" default_tag="shop" top="true" excluded_poi_additional_category="fee,internet_access_type" poi_additional_category="bulk_purchase,self_checkout,second_hand_filter">
-		<poi_filter name="shop_food" top="true">
-			<poi_type name="convenience" tag="shop" value="convenience" poi_additional_category="organic,cash_withdrawal_bank_card,delivery,coffee_filter,ice_cream_filter,diet,cafe_filter,post_office_type" icon="shop_convenience"/>
-			<poi_type name="supermarket" tag="shop" value="supermarket" poi_additional_category="drive_through,delivery,membership_filter,diet,cafe_filter" icon="shop_supermarket">
-				<poi_additional_category name="organic">
-					<poi_additional name="organic_yes" tag="organic" value="yes"/>
-					<poi_additional name="organic_only" tag="organic" value="only"/>
-				</poi_additional_category>
-				<poi_additional_category name="bulk_purchase">
-					<poi_additional name="bulk_purchase_yes" tag="bulk_purchase" value="yes"/>
-					<poi_additional name="bulk_purchase_only" tag="bulk_purchase" value="only"/>
-				</poi_additional_category>
-				<poi_additional_category name="cash_withdrawal_bank_card">
-					<poi_additional name="cash_withdrawal_yes" tag="cash_withdrawal_yes" value="yes" edit_tag="cash_withdrawal" edit_value="yes"/>
-					<poi_additional name="cash_withdrawal_postfinance_card" tag="cash_withdrawal" value="postfinance_card"/>
-					<poi_additional name="cash_withdrawal_girocard" tag="cash_withdrawal" value="girocard"/>
-					<poi_additional name="cash_withdrawal_postbank" tag="cash_withdrawal" value="postbank"/>
-				</poi_additional_category>
-				<poi_additional_category name="self_checkout">
-					<poi_additional name="self_checkout_yes" tag="self_checkout" value="yes"/>
-					<poi_additional name="self_checkout_only" tag="self_checkout" value="only"/>
-				</poi_additional_category>
-			</poi_type>
-		</poi_filter>
-		<poi_type name="alcohol" tag="shop" value="alcohol" poi_additional_category="delivery" icon="shop_alcohol">
-			<poi_additional name="drink_wine_yes" tag="drink:wine" value="yes"/>
-			<poi_additional name="drink_wine_retail" tag="drink:wine" value="retail"/>
-		</poi_type>
-
-		<poi_type name="beverages" tag="shop" value="beverages" poi_additional_category="post_office_type" icon="shop_beverages"/>
-	</poi_category>
-
 	<poi_type name="deadlock" tag="noexit" value="yes" no_edit="true"/>
+
+	<poi_category name="user_defined_other" default_tag="amenity" no_edit="true" excluded_poi_additional_category="fee,payment_type,wheelchair_accessibility,internet_access_type,opening_hours">
+		<!-- Add additional combination for UK postcode POI files-->
+		<poi_type name="user_defined_other_postcode" tag="user_defined_other" value="postcode" no_edit="true"/>
+	</poi_category>
 </poi_types>

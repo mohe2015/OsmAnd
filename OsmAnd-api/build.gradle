@@ -65,7 +65,7 @@ afterEvaluate {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.annotation:annotation:1.6.0'
+    implementation 'androidx.annotation:annotation:1.10.0'
 }
 
 tasks.register('sourcesJar', Jar) {

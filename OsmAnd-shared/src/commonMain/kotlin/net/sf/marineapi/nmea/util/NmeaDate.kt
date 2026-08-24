@@ -20,12 +20,11 @@
  */
 package net.sf.marineapi.nmea.util
 
-import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.LocalDate
-import kotlinx.datetime.atTime
-import kotlinx.datetime.toInstant
+import kotlinx.datetime.number
+import kotlin.time.Clock
 
 
 /**
@@ -53,8 +52,8 @@ class NmeaDate {
     constructor() {
         val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
         year = now.year
-        month = now.monthNumber
-        day = now.dayOfMonth
+        month = now.month.number
+        day = now.day
     }
 
     /**

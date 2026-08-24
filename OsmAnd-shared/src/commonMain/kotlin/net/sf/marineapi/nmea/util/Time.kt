@@ -20,15 +20,14 @@
  */
 package net.sf.marineapi.nmea.util
 
-import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
-import kotlinx.datetime.LocalTime
 import kotlinx.datetime.atTime
 import kotlin.math.floor
 import kotlin.math.roundToLong
+import kotlin.time.Clock
 
 /**
  * Represents a time of day in 24-hour clock, i.e. the UTC time used as default

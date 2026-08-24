@@ -18,10 +18,10 @@ import net.osmand.plus.plugins.externalsensors.devices.DeviceConnectionState
 import net.osmand.plus.plugins.externalsensors.devices.sensors.ble.BLEOBDSensor
 import net.osmand.util.Algorithms
 import okio.Buffer
-import okio.IOException
 import okio.Sink
 import okio.Source
 import okio.Timeout
+import java.io.IOException
 import kotlin.math.min
 
 class BLEOBDDevice(bluetoothAdapter: BluetoothAdapter, deviceId: String) :

@@ -10,15 +10,14 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
 import net.osmand.shared.extensions.format
-import net.osmand.shared.obd.Obd2Connection.COMMAND_TYPE.LIVE
 import net.osmand.shared.util.KCollectionUtils
 import net.osmand.shared.util.LoggerFactory
 import okio.Buffer
 import okio.Sink
 import okio.Source
 import kotlin.coroutines.coroutineContext
+import kotlin.time.Clock
 
 class OBDDispatcher(val debug: Boolean = false) {
 

@@ -40,19 +40,19 @@ kotlin {
 		}
 	}
 
-	val sqliteVersion = "2.3.1"
-	val serializationVersion = "1.6.3"
-	val coroutinesCoreVersion = "1.8.1"
-	val datetimeVersion = "0.6.1"
-	val okioVersion = "3.9.0"
+	val sqliteVersion = "2.7.0"
+	val serializationVersion = "1.11.0"
+	val coroutinesCoreVersion = "1.11.0"
+	val datetimeVersion = "0.8.0"
+	val okioVersion = "3.18.1"
 	val kxml2Version = "2.3.0"
-	val sqliterVersion = "1.3.1"
-	val sqliteJDBCVersion = "3.34.0"
-	val commonLoggingVersion = "1.2"
-	val coroutinesVersion = "1.8.1"
+	val sqliterVersion = "1.3.3"
+	val sqliteJDBCVersion = "3.53.2.1"
+	val commonLoggingVersion = "1.4.0"
+	val coroutinesVersion = "1.11.0"
 	val statelyVersion = "2.1.0"
-	val coilVersion = "3.1.0"
-    val ktorVersion = "3.1.3"
+	val coilVersion = "3.5.0"
+    val ktorVersion = "3.5.2"
 
 	sourceSets {
 		commonMain.dependencies {
@@ -89,7 +89,7 @@ kotlin {
 		}
 
 		commonTest.dependencies {
-			implementation("org.jetbrains.kotlin:kotlin-test:2.0.0")
+			implementation("org.jetbrains.kotlin:kotlin-test:2.4.10")
             implementation("io.ktor:ktor-client-mock:$ktorVersion")
 		}
 	}

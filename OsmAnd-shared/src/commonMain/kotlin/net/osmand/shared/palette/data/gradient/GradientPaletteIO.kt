@@ -1,6 +1,5 @@
 package net.osmand.shared.palette.data.gradient
 
-import kotlinx.datetime.Clock
 import net.osmand.shared.ColorPalette
 import net.osmand.shared.io.KFile
 import net.osmand.shared.palette.data.PaletteIO
@@ -12,6 +11,7 @@ import net.osmand.shared.util.LoggerFactory
 import net.osmand.shared.util.PlatformUtil
 import okio.buffer
 import okio.use
+import kotlin.time.Clock
 
 object GradientPaletteIO : PaletteIO<Palette.GradientCollection> {
 

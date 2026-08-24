@@ -1,6 +1,5 @@
 package net.osmand.shared.palette.data
 
-import kotlinx.datetime.Clock
 import net.osmand.shared.ColorPalette
 import net.osmand.shared.palette.domain.GradientPoint
 import net.osmand.shared.palette.domain.GradientProperties
@@ -15,6 +14,7 @@ import net.osmand.shared.palette.domain.filetype.PaletteFileTypeRegistry
 import net.osmand.shared.util.KAlgorithms
 import net.osmand.shared.util.NamingUtils
 import kotlin.random.Random
+import kotlin.time.Clock
 
 object PaletteUtils {
 

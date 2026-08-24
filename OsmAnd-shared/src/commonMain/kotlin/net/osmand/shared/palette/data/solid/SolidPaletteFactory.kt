@@ -1,10 +1,10 @@
 package net.osmand.shared.palette.data.solid
 
-import kotlinx.datetime.Clock
 import net.osmand.shared.palette.domain.DefaultPaletteColors
 import net.osmand.shared.palette.domain.Palette
 import net.osmand.shared.palette.domain.PaletteItem
 import net.osmand.shared.palette.domain.PaletteItemSource
+import kotlin.time.Clock
 
 object SolidPaletteFactory {
 

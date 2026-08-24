@@ -1,6 +1,5 @@
 package net.osmand.shared.media
 
-import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.format.DateTimeFormat
@@ -10,6 +9,7 @@ import kotlinx.datetime.toLocalDateTime
 import net.osmand.shared.media.domain.MediaType
 import net.osmand.shared.util.KMapUtils
 import kotlin.jvm.JvmStatic
+import kotlin.time.Clock
 
 object MediaFileNameFormat {
 

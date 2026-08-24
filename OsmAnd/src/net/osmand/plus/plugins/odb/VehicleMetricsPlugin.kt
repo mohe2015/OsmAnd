@@ -75,12 +75,12 @@ import net.osmand.shared.obd.OBDDispatcher.OBDReadStatusListener
 import net.osmand.shared.obd.OBDSimulationSource
 import net.osmand.shared.settings.enums.MetricsConstants
 import net.osmand.util.Algorithms
-import okio.IOException
 import okio.Sink
 import okio.Source
 import okio.sink
 import okio.source
 import org.json.JSONObject
+import java.io.IOException
 import java.util.UUID
 
 class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadStatusListener {

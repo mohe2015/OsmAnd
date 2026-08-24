@@ -21,8 +21,7 @@
 package net.sf.marineapi.nmea.event
 
 import net.sf.marineapi.nmea.sentence.Sentence
-
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 
 
 /**

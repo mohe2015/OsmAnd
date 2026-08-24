@@ -1,10 +1,10 @@
 package net.osmand.shared.palette.data.solid
 
-import kotlinx.datetime.Clock
 import net.osmand.shared.palette.data.PaletteModifier
 import net.osmand.shared.palette.domain.Palette
 import net.osmand.shared.palette.domain.PaletteItem
 import net.osmand.shared.util.LoggerFactory
+import kotlin.time.Clock
 
 object SolidPaletteModifier : PaletteModifier<Palette.SolidCollection> {
 

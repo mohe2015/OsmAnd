@@ -1,6 +1,5 @@
 package net.osmand.shared.palette.data.solid
 
-import kotlinx.datetime.Clock
 import net.osmand.shared.palette.domain.Palette
 import net.osmand.shared.palette.domain.PaletteItem
 import net.osmand.shared.palette.domain.PaletteItemSource
@@ -16,6 +15,7 @@ import net.osmand.shared.util.PlatformUtil
 import okio.IOException
 import okio.buffer
 import okio.use
+import kotlin.time.Clock
 
 object SolidPaletteIO : PaletteIO<Palette.SolidCollection> {
 

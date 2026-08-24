@@ -22,7 +22,6 @@
 -keep class * extends com.google.gson.reflect.TypeToken
 
 # Rhino loads several runtime classes by class name while initializing voice scripts.
--keep class org.mozilla.javascript.VMBridge { *; }
 -keep class org.mozilla.javascript.Interpreter { *; }
 -keep class org.mozilla.javascript.Interpreter$* { *; }
 -keep class org.mozilla.javascript.NativeContinuation { *; }

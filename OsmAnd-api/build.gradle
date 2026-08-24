@@ -3,6 +3,7 @@ apply plugin: 'ivy-publish'
 apply from: rootProject.file("versions.gradle")
 
 android {
+    compileSdk osmand_compileSdk
     buildToolsVersion = osmand_buildToolsVersion
 
     defaultConfig {

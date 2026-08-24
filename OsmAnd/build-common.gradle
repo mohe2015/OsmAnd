@@ -5,6 +5,7 @@ tasks.register('printc') {
 }
 
 android {
+	compileSdk osmand_compileSdk
     buildToolsVersion = osmand_buildToolsVersion
     // compileNdkVersion "android-ndk-r17b"
     namespace = "net.osmand.plus"

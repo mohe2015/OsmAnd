@@ -30,7 +30,7 @@ android {
 		main {
 			manifest.srcFile "AndroidManifest-library.xml"
 			java.srcDirs = ["src", "src-gms", "src-google"]
-			kotlin.srcDirs = ["src", "src-gms", "src-google"]
+			kotlin.directories.addAll(["src", "src-gms", "src-google"])
 		}
 	}
 

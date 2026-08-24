@@ -15,6 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.plugins.osmedit.data.EditPoiData;
@@ -23,17 +26,14 @@ import net.osmand.plus.plugins.osmedit.fragments.EditPoiContentAdapter.EditPoiLi
 import net.osmand.plus.plugins.osmedit.fragments.AdvancedEditPoiFragment.OsmTagsArrayAdapter;
 import net.osmand.plus.plugins.osmedit.fragments.AdvancedEditPoiFragment.TagItem;
 import net.osmand.plus.utils.AndroidUtils;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
 import net.osmand.util.Algorithms;
 
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText;
-
 public class TagItemHolder extends RecyclerView.ViewHolder {
 
-	private final OsmandTextFieldBoxes tagFB;
-	private final OsmandTextFieldBoxes valueFB;
-	private final ExtendedEditText tagEditText;
+	private final TextInputLayout tagFB;
+	private final TextInputLayout valueFB;
+	private final TextInputEditText tagEditText;
 	private final AutoCompleteTextView valueEditText;
 	private final View deleteButton;
 	private final OsmTagsArrayAdapter tagAdapter;
@@ -82,11 +82,11 @@ public class TagItemHolder extends RecyclerView.ViewHolder {
 		deleteButton = itemView.findViewById(R.id.delete_button);
 
 		Drawable deleteDrawable = app.getUIUtilities().getIcon(R.drawable.ic_action_remove_dark, !nightMode);
-		tagFB.setClearButton(deleteDrawable);
-		valueFB.setClearButton(deleteDrawable);
+		//tagFB.setClearButton(deleteDrawable);
+		//valueFB.setClearButton(deleteDrawable);
 
-		tagEditText.setAdapter(tagAdapter);
-		tagEditText.setThreshold(1);
+		//tagEditText.setAdapter(tagAdapter);
+		//tagEditText.setThreshold(1);
 
 		valueEditText.setAdapter(valueAdapter);
 		valueEditText.setThreshold(3);
@@ -98,7 +98,7 @@ public class TagItemHolder extends RecyclerView.ViewHolder {
 	private void setupListeners() {
 		tagEditText.setOnFocusChangeListener((v, hasFocus) -> {
 			updateCurrentTagEditText(hasFocus);
-			tagFB.setHasClearButton(hasFocus);
+			//tagFB.setHasClearButton(hasFocus);
 			if (hasFocus) {
 				tagAdapter.getFilter().filter(tagEditText.getText());
 			} else {
@@ -107,7 +107,7 @@ public class TagItemHolder extends RecyclerView.ViewHolder {
 		});
 
 		valueEditText.setOnFocusChangeListener((v, hasFocus) -> {
-			valueFB.setHasClearButton(hasFocus);
+			//valueFB.setHasClearButton(hasFocus);
 			if (hasFocus) {
 				valueAdapter.getFilter().filter(valueEditText.getText());
 			}
@@ -135,11 +135,11 @@ public class TagItemHolder extends RecyclerView.ViewHolder {
 		this.editPoiListener = editPoiListener;
 		this.editPoiAdapterListener = editPoiAdapterListener;
 
-		tagFB.setHasClearButton(false);
-		valueFB.setHasClearButton(false);
+		//tagFB.setHasClearButton(false);
+		//valueFB.setHasClearButton(false);
 
 		tagEditText.removeTextChangedListener(tagWatcher);
-		tagEditText.setText(tagItem.getTag(), false);
+		tagEditText.setText(tagItem.getTag());
 		tagEditText.addTextChangedListener(tagWatcher);
 
 		valueEditText.removeTextChangedListener(valueWatcher);

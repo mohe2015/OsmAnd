@@ -8,13 +8,13 @@ import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import net.osmand.plus.OsmandApplication
 import net.osmand.plus.R
 import net.osmand.plus.helpers.AndroidUiHelper
 import net.osmand.shared.gpx.filters.DateTrackFilter
-import net.osmand.plus.widgets.OsmandTextFieldBoxes
 import net.osmand.plus.widgets.TextViewEx
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -31,10 +31,10 @@ class FilterDateViewHolder(itemView: View, nightMode: Boolean) :
 	private val rangeInputContainer: View
 	private val explicitIndicator: ImageView
 	private var filter: DateTrackFilter? = null
-	private val valueFromInput: ExtendedEditText
+	private val valueFromInput: TextInputEditText
 	private val valueToInput: EditText
-	private val valueFromInputContainer: OsmandTextFieldBoxes
-	private val valueToInputContainer: OsmandTextFieldBoxes
+	private val valueFromInputContainer: TextInputLayout
+	private val valueToInputContainer: TextInputLayout
 	private val DATE_FORMAT = SimpleDateFormat("d MMM yyyy", Locale.getDefault())
 
 	init {

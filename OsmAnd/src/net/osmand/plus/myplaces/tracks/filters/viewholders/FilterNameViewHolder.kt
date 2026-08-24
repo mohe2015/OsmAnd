@@ -4,15 +4,15 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textfield.TextInputEditText
 import net.osmand.plus.OsmandApplication
 import net.osmand.plus.R
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText
 
 class FilterNameViewHolder(itemView: View, nightMode: Boolean) : RecyclerView.ViewHolder(itemView) {
 	private val app: OsmandApplication
 	private val nightMode: Boolean
 	private var listener: TextChangedListener? = null
-	private val title: ExtendedEditText
+	private val title: TextInputEditText
 	private val textWatcher: TextWatcher = object : TextWatcher {
 		override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 		override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}

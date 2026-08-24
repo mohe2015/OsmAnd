@@ -15,7 +15,8 @@
 		android:layout_height="wrap_content"
 		android:orientation="horizontal">
 
-		<net.osmand.plus.widgets.OsmandTextFieldBoxes
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:id="@+id/value_from"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -25,21 +26,18 @@
 			android:layout_weight="1"
 			android:focusable="true"
 			android:focusableInTouchMode="true"
-			app:errorColor="@color/color_invalid"
-			app:labelText="@string/route_from"
-			app:primaryColor="@color/active_color_primary_dark"
-			app:secondaryColor="?android:textColorSecondary">
+			android:hint="@string/route_from">
 
-			<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/value_from_et"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:inputType="none"
-				android:scrollHorizontally="true" />
+				android:scrollHorizontally="true"/>
+		</com.google.android.material.textfield.TextInputLayout>
 
-		</net.osmand.plus.widgets.OsmandTextFieldBoxes>
-
-		<net.osmand.plus.widgets.OsmandTextFieldBoxes
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:id="@+id/value_to"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -49,20 +47,15 @@
 			android:layout_weight="1"
 			android:focusable="false"
 			android:focusableInTouchMode="false"
-			app:errorColor="@color/color_invalid"
-			app:hasFocus="false"
-			app:labelText="@string/route_to"
-			app:primaryColor="@color/active_color_primary_dark"
-			app:secondaryColor="?android:textColorSecondary">
+			android:hint="@string/route_to">
 
-			<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/value_to_et"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:inputType="none"
-				android:scrollHorizontally="true" />
-
-		</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+				android:scrollHorizontally="true"/>
+		</com.google.android.material.textfield.TextInputLayout>
 
 	</LinearLayout>
 

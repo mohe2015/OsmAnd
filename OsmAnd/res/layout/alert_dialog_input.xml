@@ -4,21 +4,19 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content">
 
-	<net.osmand.plus.widgets.OsmandTextFieldBoxes
+	<com.google.android.material.textfield.TextInputLayout
+		style="@style/Widget.Material3.TextInputLayout.FilledBox"
 		android:id="@+id/text_box"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:hasClearButton="true"
-		app:secondaryColor="?android:textColorSecondary"
 		android:layout_marginTop="@dimen/dialog_content_bottom_margin"
 		android:layout_marginHorizontal="@dimen/dialog_content_margin">
 
-		<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/edit_text"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:lineSpacingMultiplier="@dimen/bottom_sheet_text_spacing_multiplier" />
-
-	</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+			android:lineSpacingMultiplier="@dimen/bottom_sheet_text_spacing_multiplier"/>
+	</com.google.android.material.textfield.TextInputLayout>
 
 </FrameLayout>

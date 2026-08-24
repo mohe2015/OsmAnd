@@ -23,6 +23,7 @@ import android.widget.*
 import androidx.annotation.StringRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
+import com.google.android.material.textfield.TextInputEditText
 import net.osmand.PlatformUtil
 import net.osmand.telegram.R
 import net.osmand.telegram.utils.AndroidNetworkUtils
@@ -31,8 +32,6 @@ import net.osmand.telegram.utils.DataConstants
 import net.osmand.telegram.utils.OsmandApiUtils
 import net.osmand.telegram.utils.applyBottomSystemWindowMargin
 import org.json.JSONObject
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText
-
 
 class LoginDialogFragment : BaseDialogFragment() {
 
@@ -296,9 +295,9 @@ class LoginDialogFragment : BaseDialogFragment() {
 		descriptionView?.text = getText(type.descriptionId)
 
 		layout.visibility = View.VISIBLE
-		val editText: ExtendedEditText? = layout.findViewById(type.editorId)
+		val editText: TextInputEditText? = layout.findViewById(type.editorId)
 		if (editText != null && !showWelcomeDialog) {
-			if (activeDialogType == LoginDialogType.ENTER_PHONE_NUMBER && editText.text.isEmpty()) {
+			if (activeDialogType == LoginDialogType.ENTER_PHONE_NUMBER && editText.text!!.isEmpty()) {
 				editText.setText(countryPhoneCode)
 			}
 			editText.setOnEditorActionListener { _, actionId, _ ->
@@ -324,7 +323,7 @@ class LoginDialogFragment : BaseDialogFragment() {
 					changeContinueButtonEnabled(s.length > passTextLength)
 				}
 			})
-			changeContinueButtonEnabled(editText.text.length > passTextLength)
+			changeContinueButtonEnabled(editText.text!!.length > passTextLength)
 			editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16F)
 		}
 

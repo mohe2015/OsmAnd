@@ -42,29 +42,26 @@
 				android:layout_height="wrap_content"
 				app:layout_scrollFlags="scroll|enterAlwaysCollapsed|snap">
 
-				<net.osmand.plus.widgets.OsmandTextFieldBoxes
+				<com.google.android.material.textfield.TextInputLayout
+					style="@style/Widget.Material3.TextInputLayout.FilledBox"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="@dimen/divider_color_light_margin_start"
 					android:layout_marginEnd="@dimen/content_padding"
 					android:importantForAutofill="noExcludeDescendants"
 					app:colorControlHighlight="@color/color_transparent"
-					app:labelText="@string/shared_string_name"
-					app:panelBackgroundColor="@color/color_transparent"
-					app:primaryColor="@color/card_and_list_background_light"
-					app:secondaryColor="@color/white_50_transparent"
-					app:useDenseSpacing="true">
+					android:hint="@string/shared_string_name">
 
-					<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+					<com.google.android.material.textfield.TextInputEditText
 						android:id="@+id/poiNameEditText"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:background="@color/color_transparent"
 						android:imeOptions="actionNext"
 						android:importantForAutofill="noExcludeDescendants"
-						android:inputType="textCapSentences" />
+						android:inputType="textCapSentences"/>
+				</com.google.android.material.textfield.TextInputLayout>
 
-				</net.osmand.plus.widgets.OsmandTextFieldBoxes>
 			</LinearLayout>
 
 			<LinearLayout
@@ -83,20 +80,17 @@
 					android:contentDescription="@string/poi_dialog_poi_type"
 					app:srcCompat="@drawable/ic_action_label" />
 
-				<net.osmand.plus.widgets.OsmandTextFieldBoxes
+				<com.google.android.material.textfield.TextInputLayout
+					style="@style/Widget.Material3.TextInputLayout.FilledBox"
 					android:id="@+id/poiTypeTextInputLayout"
 					android:layout_width="0dp"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="24dp"
 					android:layout_weight="1"
 					android:importantForAutofill="noExcludeDescendants"
-					app:endIcon="@drawable/ic_action_arrow_drop_down"
-					app:labelText="@string/poi_dialog_poi_type"
-					app:panelBackgroundColor="@color/color_transparent"
-					app:primaryColor="@color/card_and_list_background_light"
-					app:secondaryColor="@color/white_50_transparent">
+					android:hint="@string/poi_dialog_poi_type">
 
-					<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+					<com.google.android.material.textfield.TextInputEditText
 						android:id="@+id/poiTypeEditText"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
@@ -106,8 +100,7 @@
 						android:importantForAutofill="noExcludeDescendants"
 						android:inputType="text"
 						android:paddingBottom="@dimen/text_margin_small" />
-
-				</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+				</com.google.android.material.textfield.TextInputLayout>
 
 				<ImageButton
 					android:id="@+id/onlineDocumentationButton"

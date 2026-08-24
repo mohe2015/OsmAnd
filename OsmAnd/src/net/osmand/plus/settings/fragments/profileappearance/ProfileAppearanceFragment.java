@@ -31,6 +31,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.PlatformUtil;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
@@ -46,7 +48,6 @@ import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.InsetTargetsCollection;
 import net.osmand.plus.utils.UiUtilities;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.dialogbutton.DialogButton;
 import net.osmand.plus.widgets.dialogbutton.DialogButtonType;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
@@ -78,7 +79,7 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 	private ProfileAppearanceController screenController;
 	private ProgressDialog progress;
 	private EditText profileName;
-	private OsmandTextFieldBoxes profileNameOtfb;
+	private TextInputLayout profileNameOtfb;
 	private DialogButton applyButton;
 
 	private boolean hasNameError;
@@ -125,19 +126,6 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 			applyButton.setTitleId(R.string.shared_string_apply);
 			applyButton.setOnClickListener(v -> screenController.onSaveButtonClicked(getActivity()));
 			AndroidUtils.setBackground(getContext(), buttonsContainer, getListBgColorId(nightMode));
-
-			getListView().addOnScrollListener(new RecyclerView.OnScrollListener() {
-				@Override
-				public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-					super.onScrollStateChanged(recyclerView, newState);
-					if (newState != RecyclerView.SCROLL_STATE_IDLE) {
-						hideKeyboard();
-						if (profileName != null) {
-							profileName.clearFocus();
-						}
-					}
-				}
-			});
 		}
 		updateApplyButtonEnable();
 		return view;
@@ -207,18 +195,10 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 					}
 				}
 			});
-			profileName.setOnFocusChangeListener((v, hasFocus) -> {
-				if (hasFocus) {
-					profileName.setSelection(profileName.getText().length());
-					AndroidUtils.showSoftKeyboard(requireActivity(), profileName);
-				}
-			});
 			if (screenController.isNotAllParamsEditable()) {
-				profileName.setFocusableInTouchMode(false);
-				profileName.setFocusable(false);
+				profileName.setEnabled(false);
 			}
-			profileNameOtfb = (OsmandTextFieldBoxes) holder.findViewById(R.id.profile_name_otfb);
-			updateProfileNameAppearance();
+			profileNameOtfb = (TextInputLayout) holder.findViewById(R.id.profile_name_otfb);
 		} else if (COLORS_CARD.equals(key)) {
 			bindCard(holder, new ColorsPaletteCard(activity, screenController.getColorsCardController(), appMode, false));
 		} else if (PROFILE_ICON_CARD.equals(key)) {
@@ -257,11 +237,6 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 	}
 
 	@Override
-	public void updateColorItems() {
-		updateProfileNameAppearance();
-	}
-
-	@Override
 	public void updateOptionsCard() {
 		Preference viewAnglePref = findPreference(settings.VIEW_ANGLE_VISIBILITY.getId());
 		viewAnglePref.setSummary(screenController.getViewAngleVisibility().getNameId());
@@ -271,14 +246,6 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 
 	public void updateApplyButtonEnable() {
 		applyButton.setEnabled(screenController.hasChanges() && !hasNameError);
-	}
-
-	private void updateProfileNameAppearance() {
-		if (profileName != null && profileName.isFocusable() && profileName.isFocusableInTouchMode()) {
-			int selectedColor = screenController.getActualColor(isNightMode());
-			profileNameOtfb.setPrimaryColor(selectedColor);
-			profileName.getBackground().mutate().setColorFilter(selectedColor, PorterDuff.Mode.SRC_ATOP);
-		}
 	}
 
 	public void showNewProfileSavingDialog(@Nullable DialogInterface.OnShowListener showListener) {
@@ -336,7 +303,7 @@ public class ProfileAppearanceFragment extends BaseSettingsFragment implements I
 
 	private void disableSaveButtonWithErrorMessage(String errorMessage) {
 		hasNameError = true;
-		profileNameOtfb.setError(errorMessage, true);
+		profileNameOtfb.setError(errorMessage);
 		updateApplyButtonEnable();
 	}
 

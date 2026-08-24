@@ -27,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -62,7 +63,6 @@ import net.osmand.plus.settings.enums.ThemeUsageContext;
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.UiUtilities;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
 import net.osmand.util.Algorithms;
 
@@ -74,8 +74,6 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText;
 
 public class AddPOIAction extends SelectMapLocationAction {
 
@@ -407,15 +405,15 @@ public class AddPOIAction extends SelectMapLocationAction {
 			View convertView = LayoutInflater.from(linearLayout.getContext())
 					.inflate(R.layout.list_item_poi_tag, null, false);
 
-			OsmandTextFieldBoxes tagFB = convertView.findViewById(R.id.tag_fb);
-			tagFB.setClearButton(deleteDrawable);
-			tagFB.hideClearButton();
+			TextInputLayout tagFB = convertView.findViewById(R.id.tag_fb);
+			//tagFB.setClearButton(deleteDrawable);
+			//tagFB.hideClearButton();
 
-			OsmandTextFieldBoxes valueFB = convertView.findViewById(R.id.value_fb);
-			valueFB.setClearButton(deleteDrawable);
-			valueFB.hideClearButton();
+			TextInputLayout valueFB = convertView.findViewById(R.id.value_fb);
+			//valueFB.setClearButton(deleteDrawable);
+			//valueFB.hideClearButton();
 
-			ExtendedEditText tagEditText = convertView.findViewById(R.id.tagEditText);
+			TextInputEditText tagEditText = convertView.findViewById(R.id.tagEditText);
 			View deleteButton = convertView.findViewById(R.id.delete_button);
 			String[] previousTag = {tg};
 			deleteButton.setOnClickListener(v -> {
@@ -423,20 +421,20 @@ public class AddPOIAction extends SelectMapLocationAction {
 				tagsData.remove(tagEditText.getText().toString());
 				setTagsIntoParams(tagsData);
 			});
-			ExtendedEditText valueEditText = convertView.findViewById(R.id.valueEditText);
+			TextInputEditText valueEditText = convertView.findViewById(R.id.valueEditText);
 			tagEditText.setText(tg);
-			tagEditText.setAdapter(tagAdapter);
-			tagEditText.setThreshold(1);
+			//tagEditText.setAdapter(tagAdapter);
+			//tagEditText.setThreshold(1);
 			tagEditText.setOnFocusChangeListener((v, hasFocus) -> {
 				if (!hasFocus) {
-					tagFB.hideClearButton();
+					//tagFB.hideClearButton();
 					String s = tagEditText.getText().toString();
 					tagsData.remove(previousTag[0]);
 					tagsData.put(s, valueEditText.getText().toString());
 					previousTag[0] = s;
 					setTagsIntoParams(tagsData);
 				} else {
-					tagFB.showClearButton();
+					//tagFB.showClearButton();
 					tagAdapter.getFilter().filter(tagEditText.getText());
 				}
 			});
@@ -452,10 +450,10 @@ public class AddPOIAction extends SelectMapLocationAction {
 
 			valueEditText.setOnFocusChangeListener((v, hasFocus) -> {
 				if (hasFocus) {
-					valueFB.showClearButton();
+					//valueFB.showClearButton();
 					valueAdapter.getFilter().filter(valueEditText.getText());
 				} else {
-					valueFB.hideClearButton();
+					//valueFB.hideClearButton();
 				}
 			});
 

@@ -148,34 +148,34 @@
 						android:paddingRight="@dimen/content_padding_standard"
 						android:paddingBottom="@dimen/content_padding_standard">
 
-						<studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+						<com.google.android.material.textfield.TextInputLayout
+							style="@style/Widget.Material3.TextInputLayout.FilledBox"
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/list_item_height"
 							android:layout_marginBottom="@dimen/content_padding_standard"
-							app:hasClearButton="true"
+
 							app:labelText="@string/proxy_server">
 
-							<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+							<com.google.android.material.textfield.TextInputEditText
 								android:id="@+id/server_edit_text"
 								android:layout_width="match_parent"
 								android:layout_height="wrap_content"
-								android:inputType="text" />
+								android:inputType="text"/>
+						</com.google.android.material.textfield.TextInputLayout>
 
-						</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
-
-						<studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+						<com.google.android.material.textfield.TextInputLayout
+							style="@style/Widget.Material3.TextInputLayout.FilledBox"
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/list_item_height"
-							app:hasClearButton="true"
+
 							app:labelText="@string/proxy_port">
 
-							<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+							<com.google.android.material.textfield.TextInputEditText
 								android:id="@+id/port_edit_text"
 								android:layout_width="match_parent"
 								android:layout_height="wrap_content"
-								android:inputType="numberDecimal" />
-
-						</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+								android:inputType="numberDecimal"/>
+						</com.google.android.material.textfield.TextInputLayout>
 
 					</LinearLayout>
 
@@ -217,34 +217,34 @@
 							android:paddingRight="@dimen/content_padding_standard"
 							android:paddingBottom="@dimen/content_padding_standard">
 
-							<studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+							<com.google.android.material.textfield.TextInputLayout
+								style="@style/Widget.Material3.TextInputLayout.FilledBox"
 								android:layout_width="match_parent"
 								android:layout_height="@dimen/list_item_height"
 								android:layout_marginBottom="@dimen/content_padding_standard"
-								app:hasClearButton="true"
+
 								app:labelText="@string/proxy_username">
 
-								<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+								<com.google.android.material.textfield.TextInputEditText
 									android:id="@+id/username_text"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
 									android:inputType="text" />
+							</com.google.android.material.textfield.TextInputLayout>
 
-							</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
-
-							<studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+							<com.google.android.material.textfield.TextInputLayout
+								style="@style/Widget.Material3.TextInputLayout.FilledBox"
 								android:layout_width="match_parent"
 								android:layout_height="@dimen/list_item_height"
-								app:hasClearButton="true"
+
 								app:labelText="@string/proxy_password">
 
-								<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+								<com.google.android.material.textfield.TextInputEditText
 									android:id="@+id/password_text"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
 									android:inputType="textPassword" />
-
-							</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+							</com.google.android.material.textfield.TextInputLayout>
 
 						</LinearLayout>
 
@@ -288,20 +288,21 @@
 							android:paddingRight="@dimen/content_padding_standard"
 							android:paddingBottom="@dimen/content_padding_standard">
 
-							<studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+
+							<com.google.android.material.textfield.TextInputLayout
+								style="@style/Widget.Material3.TextInputLayout.FilledBox"
 								android:layout_width="match_parent"
 								android:layout_height="@dimen/list_item_height"
 								android:layout_marginBottom="@dimen/content_padding_standard"
-								app:hasClearButton="true"
+
 								app:labelText="@string/proxy_key">
 
-								<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+								<com.google.android.material.textfield.TextInputEditText
 									android:id="@+id/key_text"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
 									android:inputType="text" />
-
-							</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+							</com.google.android.material.textfield.TextInputLayout>
 
 						</LinearLayout>
 

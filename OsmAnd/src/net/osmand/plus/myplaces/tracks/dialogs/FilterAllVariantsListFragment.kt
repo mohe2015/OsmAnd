@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.textfield.TextInputEditText
 import net.osmand.plus.OsmandApplication
 import net.osmand.plus.R
 import net.osmand.plus.base.BaseFullScreenDialogFragment
@@ -30,7 +31,6 @@ import net.osmand.plus.utils.AndroidUtils
 import net.osmand.plus.widgets.dialogbutton.DialogButton
 import net.osmand.shared.gpx.filters.ListTrackFilter
 import net.osmand.shared.gpx.data.SmartFolder
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText
 
 class FilterAllVariantsListFragment : BaseFullScreenDialogFragment(), SmartFolderUpdateListener {
 	companion object {
@@ -192,7 +192,7 @@ class FilterAllVariantsListFragment : BaseFullScreenDialogFragment(), SmartFolde
 	}
 
 	private fun setupQuery(view: View) {
-		val queryInput: ExtendedEditText = view.findViewById(R.id.query_et)
+		val queryInput: TextInputEditText = view.findViewById(R.id.query_et)
 		queryInput.addTextChangedListener(textWatcher)
 	}
 

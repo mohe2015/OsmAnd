@@ -1148,7 +1148,6 @@ public class QuickSearchDialogFragment extends BaseFullScreenDialogFragment impl
 			}
 		}
 		filterChips.updateContent(filterChipItems);
-		filterChips.setContentEnabled(!searching);
 		searchResultPoiTypesChips.setContentEnabled(!searching);
 		if (!searching) {
 			searchResultPoiTypesChips.updateContent(topChips);

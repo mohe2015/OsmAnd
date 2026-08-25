@@ -20,3 +20,5 @@ cp ../../../resources/obf_creation/rendering_types.xml .
     <poi_type name="park" tag="leisure" value="park" excluded_poi_additional_category="payment_type"/>
 </poi_category>
 ```
+
+https://osmand.net/docs/user/plugins/custom

@@ -1148,6 +1148,7 @@ public class QuickSearchDialogFragment extends BaseFullScreenDialogFragment impl
 			}
 		}
 		filterChips.updateContent(filterChipItems);
+		filterChips.setContentEnabled(!searching);
 		searchResultPoiTypesChips.setContentEnabled(!searching);
 		if (!searching) {
 			searchResultPoiTypesChips.updateContent(topChips);
@@ -1296,10 +1297,6 @@ public class QuickSearchDialogFragment extends BaseFullScreenDialogFragment impl
 		}
 		return new SearchResultCollection(source.getPhrase(), source.isSkipSorting(),
 				source.getSpatialSearchVisibleLevel()).addSearchResults(filteredResults, false, false);
-	}
-
-	private void updateTopFilterChipsSelection() {
-		updateChipsState();
 	}
 
 	@Nullable

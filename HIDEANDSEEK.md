@@ -21,4 +21,11 @@ cp ../../../resources/obf_creation/rendering_types.xml .
 </poi_category>
 ```
 
+```bash
+cd plugins/Osmand-HideAndSeek/
+wget -N http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip
+unzip OsmAndMapCreator-main.zip -d OsmAndMapCreator
+~/Downloads/OsmAndMapCreator-main/utilities.sh generate-obf --ram-process --poi-types=$HOME/Documents/OsmAnd/android/plugins/Osmand-HideAndSeek/poi_types.xml ~/Documents/oepnv/data/Darmstadt.osm.pbf
+```
+
 https://osmand.net/docs/user/plugins/custom

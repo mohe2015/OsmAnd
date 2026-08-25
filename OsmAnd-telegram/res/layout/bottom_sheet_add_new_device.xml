@@ -50,21 +50,21 @@
 					app:lastBaselineToBottomHeight="16sp"
 					app:typeface="@string/font_roboto_regular" />
 
-				<studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+				<com.google.android.material.textfield.TextInputLayout
+					style="@style/Widget.Material3.TextInputLayout.FilledBox"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:paddingLeft="@dimen/content_padding_standard"
 					android:paddingRight="@dimen/content_padding_standard"
-					app:hasClearButton="true"
+
 					app:labelText="@string/device_name">
 
-					<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+					<com.google.android.material.textfield.TextInputEditText
 						android:id="@+id/edit_text"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:inputType="text" />
-
-				</studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+				</com.google.android.material.textfield.TextInputLayout>
 
 				<TextView
 					android:id="@+id/error_text_descr"

@@ -60,7 +60,7 @@ object SolidPaletteIO : PaletteIO<Palette.SolidCollection> {
 		if (file.exists()) {
 			try {
 				file.source().buffer().use { source ->
-					val baseTime = Clock.System.now().toEpochMilliseconds()
+					val baseTime = kotlin.time.Clock.System.now().toEpochMilliseconds()
 					var lineIndex = 0
 
 					while (true) {

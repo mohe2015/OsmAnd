@@ -16,6 +16,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.IndexConstants;
 import net.osmand.PlatformUtil;
 import net.osmand.plus.R;
@@ -31,7 +33,6 @@ import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.FileUtils;
 import net.osmand.plus.views.OsmandMapTileView;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
 import net.osmand.plus.widgets.dialogbutton.DialogButtonType;
 import net.osmand.plus.widgets.tools.SimpleTextWatcher;
 import net.osmand.shared.gpx.GpxFile;
@@ -83,12 +84,12 @@ public class SaveGPXBottomSheet extends MenuBottomSheetDialogFragment {
 	public void createMenuItems(Bundle savedInstanceState) {
 		View view = inflate(R.layout.save_gpx_fragment);
 
-		OsmandTextFieldBoxes textBox = view.findViewById(R.id.name_text_box);
+		TextInputLayout textBox = view.findViewById(R.id.name_text_box);
 		if (nightMode) {
-			textBox.setPrimaryColor(ContextCompat.getColor(app, R.color.active_color_primary_dark));
+			//textBox.setPrimaryColor(ContextCompat.getColor(app, R.color.active_color_primary_dark));
 		}
 		int iconColor = ColorUtilities.getDefaultIconColorId(nightMode);
-		textBox.setClearButton(getIcon(R.drawable.ic_action_remove_circle, iconColor));
+		//textBox.setClearButton(getIcon(R.drawable.ic_action_remove_circle, iconColor));
 
 		EditText nameEditText = view.findViewById(R.id.name_edit_text);
 		nameEditText.setText(initialGpxName);

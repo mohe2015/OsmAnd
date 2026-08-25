@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
 	id("org.jetbrains.kotlin.multiplatform")
 	id("org.jetbrains.kotlin.plugin.serialization")
-	id("com.android.library")
+	id("com.android.kotlin.multiplatform.library")
 	id("maven-publish")
 	id("ivy-publish")
 }
@@ -20,13 +20,18 @@ kotlin {
 		}
 	}
 
-	androidTarget {
+	android {
+		namespace = "net.osmand.shared"
+		compileSdk { version = release(35) }
+
+		withJava()
+
 		@OptIn(ExperimentalKotlinGradlePluginApi::class)
 		compilerOptions {
-			jvmTarget.set(JvmTarget.JVM_17)
+			//jvmTarget.set(JvmTarget.JVM_17)
 			freeCompilerArgs.add("-Xjvm-default=all")
 		}
-		publishLibraryVariants("release", "debug")
+		//publishLibraryVariants("release", "debug")
 	}
 
 	listOf(
@@ -40,19 +45,19 @@ kotlin {
 		}
 	}
 
-	val sqliteVersion = "2.3.1"
-	val serializationVersion = "1.6.3"
-	val coroutinesCoreVersion = "1.8.1"
-	val datetimeVersion = "0.6.1"
-	val okioVersion = "3.9.0"
+	val sqliteVersion = "2.7.0"
+	val serializationVersion = "1.11.0"
+	val coroutinesCoreVersion = "1.11.0"
+	val datetimeVersion = "0.8.0"
+	val okioVersion = "3.18.1"
 	val kxml2Version = "2.3.0"
-	val sqliterVersion = "1.3.1"
-	val sqliteJDBCVersion = "3.34.0"
-	val commonLoggingVersion = "1.2"
-	val coroutinesVersion = "1.8.1"
+	val sqliterVersion = "1.3.3"
+	val sqliteJDBCVersion = "3.53.2.1"
+	val commonLoggingVersion = "1.4.0"
+	val coroutinesVersion = "1.11.0"
 	val statelyVersion = "2.1.0"
-	val coilVersion = "3.1.0"
-    val ktorVersion = "3.1.3"
+	val coilVersion = "3.5.0"
+    val ktorVersion = "3.5.2"
 
 	sourceSets {
 		commonMain.dependencies {
@@ -89,23 +94,12 @@ kotlin {
 		}
 
 		commonTest.dependencies {
-			implementation("org.jetbrains.kotlin:kotlin-test:2.0.0")
+			implementation("org.jetbrains.kotlin:kotlin-test:2.4.10")
             implementation("io.ktor:ktor-client-mock:$ktorVersion")
 		}
 	}
 }
 
-android {
-	namespace = "net.osmand.shared"
-	compileSdk = 35
-	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_17
-		targetCompatibility = JavaVersion.VERSION_17
-	}
-	defaultConfig {
-		minSdk = 24
-	}
-}
 
 version = System.getenv("OSMAND_SHARED_ANDROID_BINARIES_IVY_REVISION") ?: "master-snapshot"
 publishing {

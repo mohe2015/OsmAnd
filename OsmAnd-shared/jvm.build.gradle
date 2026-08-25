@@ -1,6 +1,8 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version '2.0.0'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
+    id 'org.jetbrains.kotlin.multiplatform' version '2.4.10'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.4.10'
     id 'ivy-publish'    
 }
 
@@ -8,18 +10,16 @@ kotlin {
     jvm {
         // Experimental Kotlin Gradle Plugin API opt-in
         compilerOptions {
-            jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+            jvmTarget = JvmTarget.JVM_17
             freeCompilerArgs.add("-Xjvm-default=all")
         }
     }
 
-    def sqliteVersion = "2.3.1"
     def serializationVersion = "1.6.3"
     def coroutinesCoreVersion = "1.8.1"
     def datetimeVersion = "0.6.0"
     def okioVersion = "3.9.0"
     def kxml2Version = "2.3.0"
-    def sqliterVersion = "1.3.1"
     def sqliteJDBCVersion = "3.34.0"
     def commonLoggingVersion = "1.2"
     def statelyVersion = "2.1.0"
@@ -50,7 +50,7 @@ kotlin {
         }
         commonTest {
             dependencies {
-                implementation "org.jetbrains.kotlin:kotlin-test:2.0.0"
+                implementation "org.jetbrains.kotlin:kotlin-test:2.4.10"
                 implementation "io.ktor:ktor-client-mock:$ktorVersion"
             }
         }

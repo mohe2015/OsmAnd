@@ -183,7 +183,7 @@ class AisObject {
         this.msgType = msgType
         this.countryCode = getCountryCode(this.mmsi)
         this.msgTypes.add(msgType)
-        this.lastUpdate = kotlinx.datetime.Clock.System.now().toEpochMilliseconds()
+        this.lastUpdate = kotlin.time.Clock.System.now().toEpochMilliseconds()
     }
 
     private fun initLatLon(lat: Double, lon: Double) {
@@ -278,13 +278,13 @@ class AisObject {
         }
 
         this.countryCode = ais.countryCode
-        this.lastUpdate = kotlinx.datetime.Clock.System.now().toEpochMilliseconds()
+        this.lastUpdate = kotlin.time.Clock.System.now().toEpochMilliseconds()
         this.msgTypes.add(msgType)
         this.initObjectClass()
     }
 
     fun isLost(maxAgeInMin: Int): Boolean {
-        return ((kotlinx.datetime.Clock.System.now().toEpochMilliseconds() - this.lastUpdate) / 1000 / 60) > maxAgeInMin
+        return ((kotlin.time.Clock.System.now().toEpochMilliseconds() - this.lastUpdate) / 1000 / 60) > maxAgeInMin
     }
 
     fun getShipTypeString(): String {

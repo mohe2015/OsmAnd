@@ -7,18 +7,17 @@
 	android:layout_height="wrap_content"
 	android:orientation="vertical">
 
-	<net.osmand.plus.widgets.OsmandTextFieldBoxes
+	<com.google.android.material.textfield.TextInputLayout
+		style="@style/Widget.Material3.TextInputLayout.FilledBox"
 		android:id="@+id/edit_text_container"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:focusable="true"
 		android:focusableInTouchMode="true"
 		android:minHeight="@dimen/favorites_list_item_height"
-		app:labelText="@string/enter_verification_code"
-		app:primaryColor="@color/coordinate_input_edit_text_activated"
-		app:secondaryColor="@color/text_color_tertiary_light">
+		android:hint="@string/enter_verification_code">
 
-		<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/edit_text"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -27,8 +26,7 @@
 			android:maxLines="1"
 			android:saveEnabled="false"
 			tools:text="123456" />
-
-	</net.osmand.plus.widgets.OsmandTextFieldBoxes>
+	</com.google.android.material.textfield.TextInputLayout>
 
 	<net.osmand.plus.widgets.TextViewEx
 		android:id="@+id/error_text"

@@ -16,14 +16,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.UiUtilities;
-import net.osmand.plus.widgets.OsmandTextFieldBoxes;
-
-import studio.carbonylgroup.textfieldboxes.ExtendedEditText;
 
 public class CustomAlert {
 
@@ -47,23 +47,23 @@ public class CustomAlert {
 
 		AlertDialog.Builder builder = createAlertDialogBuilder(data);
 		View view = inflater.inflate(R.layout.alert_dialog_input, null, false);
-		OsmandTextFieldBoxes textBox = view.findViewById(R.id.text_box);
-		ExtendedEditText editText = view.findViewById(R.id.edit_text);
+		TextInputLayout textBox = view.findViewById(R.id.text_box);
+		TextInputEditText editText = view.findViewById(R.id.edit_text);
 		data.putExtra(AlertDialogExtra.EDIT_TEXT, editText);
 		builder.setView(view);
 
 		Integer controlsColor = data.getControlsColor();
 		if (controlsColor != null) {
-			textBox.setPrimaryColor(controlsColor);
+			//textBox.setPrimaryColor(controlsColor);
 		}
 		if (caption != null) {
-			textBox.setLabelText(caption);
+			//textBox.setLabelText(caption);
 		}
 		Drawable iconActionRemove = iconsCache.getIcon(
 				R.drawable.ic_action_remove_circle,
 				ColorUtilities.getDefaultIconColorId(data.isNightMode())
 		);
-		textBox.setClearButton(iconActionRemove);
+		//textBox.setClearButton(iconActionRemove);
 		if (initialText != null) {
 			editText.setText(initialText);
 		}

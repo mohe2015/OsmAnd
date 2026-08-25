@@ -1298,10 +1298,6 @@ public class QuickSearchDialogFragment extends BaseFullScreenDialogFragment impl
 				source.getSpatialSearchVisibleLevel()).addSearchResults(filteredResults, false, false);
 	}
 
-	private void updateTopFilterChipsSelection() {
-		updateChipsState();
-	}
-
 	@Nullable
 	private String getCurrentSearchFilterId() {
 		return currentSearchFilterId != null

@@ -1,5 +1,6 @@
 package net.osmand.osm.oauth;
 
+import com.github.scribejava.core.builder.ScopeBuilder;
 import com.github.scribejava.core.builder.ServiceBuilderOAuth20;
 import com.github.scribejava.core.builder.api.DefaultApi20;
 import com.github.scribejava.core.httpclient.HttpClient;
@@ -50,6 +51,12 @@ public class ServiceBuilder implements ServiceBuilderOAuth20 {
         return this;
     }
 
+    @Override
+    public ServiceBuilderOAuth20 apiSecretIsEmptyStringUnsafe() {
+        this.apiSecret = "";
+        return this;
+    }
+
     private ServiceBuilder setScope(String scope) {
         Preconditions.checkEmptyString(scope, "Invalid OAuth scope");
         this.scope = scope;
@@ -59,6 +66,11 @@ public class ServiceBuilder implements ServiceBuilderOAuth20 {
     @Override
     public ServiceBuilderOAuth20 defaultScope(String defaultScope) {
         return setScope(defaultScope);
+    }
+
+    @Override
+    public ServiceBuilderOAuth20 defaultScope(ScopeBuilder scopeBuilder) {
+        return setScope(scopeBuilder.build());
     }
 
     @Override

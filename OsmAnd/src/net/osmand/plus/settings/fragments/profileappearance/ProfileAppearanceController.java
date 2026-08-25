@@ -384,7 +384,6 @@ public class ProfileAppearanceController extends BaseDialogController {
 	}
 
 	private void updateColorItems() {
-		screen.updateColorItems();
 		for (IconsPaletteController<?> controller : collectIconsControllers()) {
 			controller.askUpdateColoredPaletteElements();
 		}

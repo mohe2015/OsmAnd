@@ -26,6 +26,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.neverEqualPolicy
@@ -164,7 +165,7 @@ class ChipsLayout @JvmOverloads constructor(
 		fun onDropdownItemClick(chipId: String, itemId: Int)
 	}
 
-	private var items by mutableStateOf<List<ChipData>>(emptyList(), neverEqualPolicy())
+	private var items = mutableStateOf<List<ChipData>>(emptyList(), neverEqualPolicy())
 	private var expandedChipId by mutableStateOf<String?>(null)
 	private var appMode by mutableStateOf<ApplicationMode?>(null)
 	private var themeUsageContext by mutableStateOf(ThemeUsageContext.APP)
@@ -180,11 +181,11 @@ class ChipsLayout @JvmOverloads constructor(
 	}
 
 	fun updateContent(chips: List<ChipData>) {
-		val currentChips = items.associateBy { it.id }
+		val currentChips = items.value.associateBy { it.id }
 		val updatedChips = chips.map { chip ->
 			currentChips[chip.id]?.also { it.updateContent(chip) } ?: chip
 		}
-		items = updatedChips
+		items.value = updatedChips
 		if (updatedChips.none { it.id == expandedChipId && it.visible && it.enabled && it.hasDropDown }) {
 			expandedChipId = null
 		}
@@ -258,7 +259,7 @@ class ChipsLayout @JvmOverloads constructor(
 
 @Composable
 private fun ChipsLayoutContent(
-	items: List<ChipsLayout.ChipData>,
+	items: MutableState<List<ChipsLayout.ChipData>>,
 	contentEnabled: Boolean,
 	nightMode: Boolean,
 	expandedChipId: String?,
@@ -280,7 +281,7 @@ private fun ChipsLayoutContent(
 	)
 	val contentPadding = dimensionResource(R.dimen.content_padding)
 	val halfPadding = dimensionResource(R.dimen.content_padding_half)
-	val chips = items.filter { it.visible }
+	val chips = items.value.filter { it.visible }
 
 	MaterialTheme(
 		colorScheme = lightColorScheme(

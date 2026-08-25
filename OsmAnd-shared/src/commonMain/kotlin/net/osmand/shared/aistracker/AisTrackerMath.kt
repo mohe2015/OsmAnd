@@ -134,7 +134,7 @@ object AisTrackerMath {
     }
 
     private fun getLonCorrection(loc: AisLocation?): Double {
-        val now = kotlinx.datetime.Clock.System.now().toEpochMilliseconds()
+        val now = kotlin.time.Clock.System.now().toEpochMilliseconds()
         if (((now - lastCorrectionUpdate) / 1000 / 60) > maxCorrectionUpdateAgeInMin) {
             correctionFactor = calculateLonCorrection(loc)
             lastCorrectionUpdate = now

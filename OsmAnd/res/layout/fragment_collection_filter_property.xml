@@ -29,28 +29,25 @@
 
 		</com.google.android.material.appbar.AppBarLayout>
 
-		<net.osmand.plus.widgets.OsmandTextFieldBoxes
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.FilledBox"
 			android:id="@+id/query"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="@dimen/list_content_padding"
 			android:focusable="true"
 			android:focusableInTouchMode="true"
-			app:hasClearButton="true"
-			app:labelText="@string/filter_by_name"
-			app:primaryColor="@color/active_color_primary_dark"
-			app:secondaryColor="?android:textColorSecondary">
 
-			<studio.carbonylgroup.textfieldboxes.ExtendedEditText
+			android:hint="@string/filter_by_name">
+
+			<com.google.android.material.textfield.TextInputEditText
 				android:id="@+id/query_et"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:inputType="text"
 				android:maxLines="1"
-				android:scrollHorizontally="true" />
-
-		</net.osmand.plus.widgets.OsmandTextFieldBoxes>
-
+				android:scrollHorizontally="true"  />
+		</com.google.android.material.textfield.TextInputLayout>
 
 		<androidx.recyclerview.widget.RecyclerView
 			android:id="@+id/filters_list"

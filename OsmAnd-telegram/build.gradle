@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 apply from: rootProject.file("versions.gradle")
 
 android {
-	compileSdk osmand_compileSdk
+	compileSdk = osmand_compileSdk
 	buildToolsVersion = osmand_buildToolsVersion
 	namespace = "net.osmand.telegram"
 
@@ -11,10 +10,6 @@ android {
 		sourceCompatibility = JavaVersion.VERSION_17
 		targetCompatibility = JavaVersion.VERSION_17
 	}
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 
 	sourceSets {
 		main {
@@ -92,22 +87,21 @@ android {
 			signingConfig signingConfigs.publishing
 		}
 	}
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/proguard/androidx-annotations.pro']
+        }
+    }
 
 
-	lintOptions {
-		// use this line to check all rules except those listed
-		disable 'InvalidPackage'
-		disable 'MissingTranslation'
-	}
-
-	packagingOptions {
-		exclude 'META-INF/proguard/androidx-annotations.pro'
-	}
-	buildFeatures {
+    buildFeatures {
 		aidl true
 	}
+    lint {
+        disable 'InvalidPackage', 'MissingTranslation'
+    }
 
-	applicationVariants.configureEach {
+    applicationVariants.configureEach {
 		def variant = it
 		def taskName = variant.name.capitalize()
 		def mergeAssetsTaskName = "merge${taskName}Assets"
@@ -172,17 +166,13 @@ dependencies {
 	implementation project(path: ':OsmAnd-java', configuration: 'android')
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-	implementation 'androidx.multidex:multidex:2.0.1'
-	implementation 'androidx.appcompat:appcompat:1.6.1'
-	implementation 'com.google.android.material:material:1.9.0'
-	implementation 'androidx.browser:browser:1.0.0'
-	implementation 'androidx.annotation:annotation:1.6.0'
+	implementation 'androidx.appcompat:appcompat:1.8.0'
+	implementation 'com.google.android.material:material:1.14.0'
+	implementation 'androidx.browser:browser:1.10.0'
+	implementation 'androidx.annotation:annotation:1.10.0'
 	implementation 'commons-logging:commons-logging-api:1.1'
-	implementation 'androidx.recyclerview:recyclerview:1.1.0'
+	implementation 'androidx.recyclerview:recyclerview:1.4.0'
 	implementation 'com.vividsolutions:jts-core:1.14.0'
-	implementation("com.github.HITGIF:TextFieldBoxes:1.4.5") {
-		exclude group: 'com.android.support'
-	}
 
-	implementation 'com.google.android.gms:play-services-location:21.3.0'
+	implementation 'com.google.android.gms:play-services-location:21.4.0'
 }

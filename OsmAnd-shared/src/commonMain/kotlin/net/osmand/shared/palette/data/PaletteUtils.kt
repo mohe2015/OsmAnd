@@ -138,7 +138,7 @@ object PaletteUtils {
 		val existingIds = palette.items.map { it.id }.toSet()
 		val newId = generateSolidUniqueId(existingIds)
 		val lastUsedTime =
-			if (markAsUsed) Clock.System.now().toEpochMilliseconds() else originalItem.lastUsedTime
+			if (markAsUsed) kotlin.time.Clock.System.now().toEpochMilliseconds() else originalItem.lastUsedTime
 
 		return originalItem.copy(
 			id = newId,
@@ -155,7 +155,7 @@ object PaletteUtils {
 		val existingIds = palette.items.map { it.id }.toSet()
 		val newId = generateSolidUniqueId(existingIds)
 
-		val lastUsedTime = if (markAsUsed) Clock.System.now().toEpochMilliseconds() else 0L
+		val lastUsedTime = if (markAsUsed) kotlin.time.Clock.System.now().toEpochMilliseconds() else 0L
 		val maxHistoryIndex = palette.items.maxOfOrNull { it.historyIndex } ?: 0
 
 		return PaletteItem.Solid(

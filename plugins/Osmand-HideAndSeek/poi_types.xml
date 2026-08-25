@@ -2,6 +2,10 @@
 <!-- "order" is used for context menu tag priority. Default order is 90. top="true" means that poi will be available in filter -->
 <poi_types>
 
+	<poi_category name="user_defined_other">
+
+	</poi_category>
+
 	<poi_category name="tourism" default_tag="tourism" top="true">
 		<poi_filter name="sightseeing" top="true">
 			<poi_type name="zoo" tag="tourism" value="zoo" order="89">

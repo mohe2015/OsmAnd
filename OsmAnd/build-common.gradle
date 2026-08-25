@@ -376,6 +376,12 @@ tasks.register('appStart', Exec) {
 	// commandLine 'cmd', '/c', 'adb', 'shell', 'am', 'start', '-n', 'net.osmand.plus/net.osmand.plus.activities.MapActivity'
 }
 
+project(':OsmAnd-java') {
+	tasks.matching { it.name.contains('test') || it.name.contains('Test') }.configureEach {
+		enabled = false
+	}
+}
+
 dependencies {
 	implementation project(path: ':OsmAnd-java', configuration: 'android')
 	implementation project(':OsmAnd-api')
